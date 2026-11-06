@@ -1,11 +1,25 @@
+# Python environment
 .venv/
 __pycache__/
+*.py[cod]
+
+# Jupyter
 .ipynb_checkpoints/
 
+# Raw NHANES data - keep files local
 data/raw/*
-data/processed/*
+!data/raw/.gitkeep
 
+# Processed data - keep files local
+data/processed/*
+!data/processed/.gitkeep
+
+# Generated models - keep files local
 outputs/models/*
+!outputs/models/.gitkeep
+
+# Mac system files
 .DS_Store
 
+# Environment secrets
 .env
