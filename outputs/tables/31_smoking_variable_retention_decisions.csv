@@ -1,0 +1,5 @@
+Variable,Missing_Count,Missing_Percentage,Retention_Decision,Treatment_Decision,Verification_Status
+SMQ020,27,0.36,Retain provisionally,Verify response codes and missingness,Official documentation review required
+SMQ040,4443,58.96,Retain provisionally,Investigate questionnaire skip pattern,Official documentation review required
+SMD641,7313,97.04,Retain provisionally,Verify eligibility and response codes,Official documentation review required
+SMD650,6416,85.14,Retain provisionally,Verify eligibility and response codes,Official documentation review required

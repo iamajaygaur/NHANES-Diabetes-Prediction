@@ -1,0 +1,3 @@
+Feature_Category,Number_of_Features,Missing_Values,Total_Values,Missing_Percentage
+Numerical,28,79448,211008,37.65
+Categorical,23,37166,173328,21.44

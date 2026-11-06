@@ -1,0 +1,6 @@
+Variable_1,Variable_2,Missingness_Correlation,Both_Missing_Count,Both_Missing_Percentage,Missingness_Pattern,Retention_Decision,Imputation_Decision,Verification_Status
+PAD810Q,PAD820,0.9997316106984862,4168,55.31,Nearly identical missingness pattern,Retain both variables provisionally,Defer until eligibility and skip patterns are verified,Pending official NHANES codebook review
+BPQ030,BPQ150,0.9925887041331941,4759,63.15,Partial shared missingness,Retain both variables provisionally,Defer until eligibility and skip patterns are verified,Pending official NHANES codebook review
+ALQ121,ALQ130,0.9917904306215107,3712,49.26,Partial shared missingness,Retain both variables provisionally,Defer until eligibility and skip patterns are verified,Pending official NHANES codebook review
+ALQ111,ALQ151,0.8711050122267924,2477,32.87,Partial shared missingness,Retain both variables provisionally,Defer until eligibility and skip patterns are verified,Pending official NHANES codebook review
+ALQ121,ALQ151,0.8020788724349908,2929,38.87,Partial shared missingness,Retain both variables provisionally,Defer until eligibility and skip patterns are verified,Pending official NHANES codebook review

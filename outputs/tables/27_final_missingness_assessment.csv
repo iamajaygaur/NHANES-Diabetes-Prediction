@@ -1,0 +1,10 @@
+Assessment,Result
+Total dataset columns,57.0
+Columns with missing values,44.0
+Columns without missing values,13.0
+Numerical predictors,28.0
+Categorical predictors,23.0
+Numerical missingness (%),37.65
+Categorical missingness (%),21.44
+Target missing values,0.0
+Predictors with more than 30% missingness,17.0

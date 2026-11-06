@@ -1,0 +1,3 @@
+Variable,Refused_Code,Dont_Know_Code,Observed_Refused_Count,Observed_Dont_Know_Count,Verification_Status,Cleaning_Decision
+SMD641,77,99,0,5,Verified using official CDC SMQ_L documentation,Convert Don't know and refused codes to missing
+SMD650,777,999,0,9,Verified using official CDC SMQ_L documentation,Convert Don't know and refused codes to missing

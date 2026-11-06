@@ -1,0 +1,52 @@
+,Missing_Count,Missing_Percentage,Data_Type,Proposed_Treatment
+SMD641,7313,97.04,float64,Investigate skip patterns and eligibility
+ALQ280,6632,88.0,float64,Investigate skip patterns and eligibility
+SMD650,6416,85.14,float64,Investigate skip patterns and eligibility
+ALQ170,6394,84.85,float64,Investigate skip patterns and eligibility
+ALQ270,6313,83.77,float64,Investigate skip patterns and eligibility
+DMDYRUSR,6099,80.93,float64,Investigate skip patterns and eligibility
+RIDEXPRG,6059,80.4,float64,Investigate skip patterns and eligibility
+ALQ142,5345,70.93,float64,Investigate skip patterns and eligibility
+BPQ030,4782,63.46,float64,Investigate skip patterns and eligibility
+BPQ150,4762,63.19,float64,Investigate skip patterns and eligibility
+SMQ040,4443,58.96,float64,Investigate skip patterns and eligibility
+PAD810Q,4169,55.32,float64,Investigate skip patterns and eligibility
+PAD820,4168,55.31,float64,Investigate skip patterns and eligibility
+ALQ130,3739,49.62,float64,Investigate skip patterns and eligibility
+ALQ121,3716,49.31,float64,Investigate skip patterns and eligibility
+ALQ151,2949,39.13,float64,Investigate skip patterns and eligibility
+ALQ111,2482,32.94,float64,Investigate skip patterns and eligibility
+BMXWAIST,1983,26.31,float64,Evaluate numerical median imputation
+BPXOSY3,1905,25.28,float64,Evaluate numerical median imputation
+BPXOPLS3,1905,25.28,float64,Evaluate numerical median imputation
+BPXODI3,1905,25.28,float64,Evaluate numerical median imputation
+BPXOPLS2,1892,25.11,float64,Evaluate numerical median imputation
+BPXODI2,1892,25.11,float64,Evaluate numerical median imputation
+BPXOSY2,1892,25.11,float64,Evaluate numerical median imputation
+BPXOPLS1,1885,25.01,float64,Evaluate numerical median imputation
+BPXODI1,1885,25.01,float64,Evaluate numerical median imputation
+BPXOSY1,1885,25.01,float64,Evaluate numerical median imputation
+BMXBMI,1784,23.67,float64,Evaluate numerical median imputation
+BMXWT,1771,23.5,float64,Evaluate numerical median imputation
+BMXHT,1757,23.31,float64,Evaluate numerical median imputation
+RIDEXMON,1693,22.47,float64,Evaluate categorical imputation
+PAD800,1649,21.88,float64,Evaluate numerical median imputation
+PAD790Q,1606,21.31,float64,Evaluate numerical median imputation
+INDFMPIR,1345,17.85,float64,Evaluate numerical median imputation
+BPQ080,46,0.61,float64,Evaluate categorical imputation
+BPQ101D,32,0.42,float64,Evaluate categorical imputation
+SMQ020,27,0.36,float64,Evaluate categorical imputation
+DMDMARTZ,24,0.32,float64,Evaluate categorical imputation
+PAD680,18,0.24,float64,Evaluate numerical median imputation
+DMDBORN4,14,0.19,float64,Evaluate categorical imputation
+DMQMILIZ,14,0.19,float64,Evaluate categorical imputation
+DMDEDUC2,13,0.17,float64,Evaluate categorical imputation
+BPQ020,11,0.15,float64,Evaluate categorical imputation
+RIDRETH1,0,0.0,float64,No imputation required
+RIDAGEYR,0,0.0,float64,No imputation required
+RIDRETH3,0,0.0,float64,No imputation required
+PAD810U,0,0.0,object,No imputation required
+DMDHHSIZ,0,0.0,float64,No imputation required
+PAD790U,0,0.0,object,No imputation required
+RIAGENDR,0,0.0,float64,No imputation required
+RIDSTATR,0,0.0,float64,No imputation required

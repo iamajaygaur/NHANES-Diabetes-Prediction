@@ -1,0 +1,5 @@
+Proposed_Treatment,Number_of_Predictors,Percentage
+Investigate skip patterns and eligibility,17,33.33
+Evaluate numerical median imputation,17,33.33
+Evaluate categorical imputation,9,17.65
+No imputation required,8,15.69

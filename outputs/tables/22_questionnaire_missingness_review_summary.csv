@@ -1,0 +1,6 @@
+Variable_1,Variable_2,Missingness_Correlation,Both_Missing_Count,Both_Missing_Percentage,Only_Variable_1_Missing,Only_Variable_2_Missing,Missingness_Pattern,Review_Decision
+PAD810Q,PAD820,0.9997316106984862,4168,55.31,1,0,Nearly identical missingness pattern,Retain both variables; investigate questionnaire skip patterns
+BPQ030,BPQ150,0.9925887041331941,4759,63.15,23,3,Partial shared missingness,Retain both variables; investigate questionnaire skip patterns
+ALQ121,ALQ130,0.9917904306215107,3712,49.26,4,27,Partial shared missingness,Retain both variables; investigate questionnaire skip patterns
+ALQ111,ALQ151,0.8711050122267924,2477,32.87,5,472,Partial shared missingness,Retain both variables; investigate questionnaire skip patterns
+ALQ121,ALQ151,0.8020788724349908,2929,38.87,787,20,Partial shared missingness,Retain both variables; investigate questionnaire skip patterns

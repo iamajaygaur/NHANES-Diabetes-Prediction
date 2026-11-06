@@ -1,0 +1,8 @@
+Review_Item,Result
+Variables reviewed,"SMQ020, SMQ040, SMD641, SMD650"
+Original response distributions,Completed
+Questionnaire routing,Completed; observed associations documented
+Special response codes,Verified against official CDC documentation
+Missingness assessment,Completed
+Feature retention,All four variables retained provisionally
+Imputation,Deferred until final preprocessing

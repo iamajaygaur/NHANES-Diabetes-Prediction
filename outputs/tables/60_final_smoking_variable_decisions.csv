@@ -1,0 +1,5 @@
+Variable,Description,Missing_Count,Missing_Percentage,Retention_Decision,Imputation_Decision,Review_Status
+SMQ020,Smoked at least 100 cigarettes in life,27,0.3582802547770701,Retain provisionally,Defer until final preprocessing,Initial review completed; retain provisionally
+SMQ040,Current cigarette smoking frequency,4443,58.95700636942676,Retain provisionally,Defer until final preprocessing,Initial review completed; retain provisionally
+SMD641,Number of days smoked cigarettes in past 30 days,7313,97.04087048832271,Retain provisionally,Defer until final preprocessing,Initial review completed; retain provisionally
+SMD650,Average number of cigarettes smoked per day,6416,85.13800424628451,Retain provisionally,Defer until final preprocessing,Initial review completed; retain provisionally

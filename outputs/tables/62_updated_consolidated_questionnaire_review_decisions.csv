@@ -1,0 +1,19 @@
+Variable,Missing_Count,Missing_Percentage,Retention_Decision,Treatment_Decision,Verification_Status,Available_Count,Observed_Responses,Reason,Further_Action
+SMQ020,27,0.36,Retain provisionally,Defer until final preprocessing,Official NHANES response-code documentation verified; questionnaire review completed,,,,Consider questionnaire routing and missingness during final preprocessing
+SMQ040,4443,58.96,Retain provisionally,Defer until final preprocessing,Official NHANES response-code documentation verified; questionnaire review completed,,,,Consider questionnaire routing and missingness during final preprocessing
+SMD641,7313,97.04,Retain provisionally,Defer until final preprocessing,Official NHANES response-code documentation verified; questionnaire review completed,,,,Consider questionnaire routing and missingness during final preprocessing
+SMD650,6416,85.14,Retain provisionally,Defer until final preprocessing,Official NHANES response-code documentation verified; questionnaire review completed,,,,Consider questionnaire routing and missingness during final preprocessing
+ALQ111,2482,32.94,Retain provisionally,Verify questionnaire eligibility and skip patterns,Official NHANES documentation review required,5054.0,,,
+ALQ121,3716,49.31,Retain provisionally,Verify questionnaire eligibility and skip patterns,Official NHANES documentation review required,3820.0,,,
+ALQ130,3739,49.62,Retain provisionally,Verify questionnaire eligibility and skip patterns,Official NHANES documentation review required,3797.0,,,
+ALQ142,5345,70.93,Retain provisionally,Verify questionnaire eligibility and skip patterns,Official NHANES documentation review required,2191.0,,,
+ALQ151,2949,39.13,Retain provisionally,Verify questionnaire eligibility and skip patterns,Official NHANES documentation review required,4587.0,,,
+ALQ170,6394,84.85,Retain provisionally,Verify questionnaire eligibility and skip patterns,Official NHANES documentation review required,1142.0,,,
+ALQ270,6313,83.77,Retain provisionally,Verify questionnaire eligibility and skip patterns,Official NHANES documentation review required,1223.0,,,
+ALQ280,6632,88.0,Retain provisionally,Verify questionnaire eligibility and skip patterns,Official NHANES documentation review required,904.0,,,
+BPQ030,4782,63.46,Retain provisionally,Investigate questionnaire skip patterns,Official NHANES documentation review required,2754.0,,,
+BPQ150,4762,63.19,Retain provisionally,Investigate questionnaire skip patterns,Official NHANES documentation review required,2774.0,,,
+PAD810Q,4169,55.32,Retain provisionally,Investigate questionnaire eligibility and skip patterns,Official NHANES documentation review required,3367.0,,,
+PAD820,4168,55.31,Retain provisionally,Investigate questionnaire eligibility and skip patterns,Official NHANES documentation review required,3368.0,,,
+DMDYRUSR,6099,80.93152866242038,Retain provisionally,,,,6.0,Retained pending verification of eligibility and questionnaire routing rules.,Verify response codes and missingness using official NHANES documentation.
+RIDEXPRG,6059,80.40074309978769,Retain provisionally,,,,3.0,Retained pending verification of eligibility and questionnaire routing rules.,Verify response codes and participant eligibility using official NHANES documentation.

@@ -1,0 +1,3 @@
+Variable,Missing_Count,Missing_Percentage,Available_Count,Retention_Decision,Treatment_Decision,Verification_Status
+BPQ030,4782,63.46,2754,Retain provisionally,Investigate questionnaire skip patterns,Official NHANES documentation review required
+BPQ150,4762,63.19,2774,Retain provisionally,Investigate questionnaire skip patterns,Official NHANES documentation review required
