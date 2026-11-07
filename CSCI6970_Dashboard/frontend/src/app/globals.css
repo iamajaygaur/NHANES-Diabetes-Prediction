@@ -220,27 +220,34 @@ body {
 
 .page-container {
   width: 100%;
-  /* Keep composition from stretching on ultrawide displays */
-  max-width: 1180px;
+  /* Narrower column + larger gutters so sides breathe */
+  max-width: 1080px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 1.15rem;
-  padding-right: 1.15rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
   min-width: 0;
   overflow-x: clip;
 }
 
 @media (min-width: 640px) {
   .page-container {
-    padding-left: 1.75rem;
-    padding-right: 1.75rem;
+    padding-left: 2.25rem;
+    padding-right: 2.25rem;
   }
 }
 
 @media (min-width: 1024px) {
   .page-container {
-    padding-left: 2.25rem;
-    padding-right: 2.25rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .page-container {
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
   }
 }
 
@@ -265,8 +272,9 @@ main.page-container {
   top: 0.75rem;
   left: 50%;
   transform: translateX(-50%);
-  width: calc(100% - 1.5rem);
-  max-width: 1180px;
+  /* Match page gutters — visible space left/right of header */
+  width: calc(100% - 3rem);
+  max-width: 1080px;
   z-index: 50;
   /* Outer shell is transparent — individual pills carry the surface */
   background: transparent;
@@ -306,7 +314,7 @@ html.dark .header-pill {
 /* Density variants — spacious is the polished Amplo default */
 .float-header[data-density="spacious"] {
   top: 0.85rem;
-  width: calc(100% - 1.75rem);
+  width: calc(100% - 3.5rem);
 }
 
 .float-header[data-density="spacious"] .header-row {
@@ -326,7 +334,7 @@ html.dark .header-pill {
 
 .float-header[data-density="compact"] {
   top: 0.55rem;
-  width: calc(100% - 1.25rem);
+  width: calc(100% - 3rem);
 }
 
 .float-header[data-density="compact"] .header-row {
