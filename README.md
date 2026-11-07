@@ -1,18 +1,17 @@
 # NHANES-Based Diabetes Prediction Using Machine Learning
+****Course:**** CSCI 6970 -- MS Course Project  
 
-**Course:** CSCI 6970 -- MS Course Project  
-
-**Project Domain:** Data Science | Machine Learning |
+****Project Domain:**** Data Science | Machine Learning |
 Healthcare Analytics  
 
-**Dataset:** National Health and Nutrition Examination Survey
+****Dataset:**** National Health and Nutrition Examination Survey
 (NHANES) 2021--2023  
 
-**Programming Language:** Python  
+****Programming Language:**** Python  
 
-**Environment:** Jupyter Notebook | macOS
+****Environment:**** Jupyter Notebook | macOS
+---
 ## 1. Project Overview
-
 Diabetes is a major public health concern that requires effective
 approaches for risk identification and early intervention. Machine
 learning provides opportunities to analyze demographic, socioeconomic,
@@ -32,12 +31,10 @@ The project follows a systematic data science workflow, from dataset
 integration and preprocessing to model development, evaluation, and
 interpretation.
 
-**Note:** The prediction target represents self-reported
+****Note:**** The prediction target represents self-reported
 diagnosed diabetes and should not be interpreted as an independent
 clinical diagnosis or medical screening tool.
-
 ## 2. Project Objectives
-
 The primary objectives are:
 
 - Integrate relevant NHANES datasets into a unified analytical dataset.
@@ -59,11 +56,9 @@ classification.
 - Identify important predictors associated with self-reported diabetes.
 
 - Select and evaluate an appropriate final predictive model.
-
 ## 3. Dataset Description
-
-This project uses data from the **National Health and Nutrition
-Examination Survey (NHANES) 2021--2023**.
+This project uses data from the ****National Health and Nutrition
+Examination Survey (NHANES) 2021--2023****.
 
 NHANES is a program conducted by the National Center for Health
 Statistics (NCHS), part of the Centers for Disease Control and
@@ -92,22 +87,20 @@ The following datasets were integrated using the participant identifier
 
 | ALQ_L | Alcohol use questionnaire |
 
-**Initial dataset dimensions:**
+****Initial dataset dimensions:****
 
 - 7,536 participants
 
 - 69 variables
 
-**Final modeling dataset:**
+****Final modeling dataset:****
 
 - 7,536 observations
 
 - 51 predictor variables
 
 - 1 target variable
-
 ### Target Variable
-
 The target variable `DIABETES` was derived from NHANES variable
 `DIQ010`.
 
@@ -125,9 +118,7 @@ The target variable `DIABETES` was derived from NHANES variable
 
 The target identifies participants who self-reported a previous diabetes
 diagnosis.
-
 ## 4. Project Methodology
-
 The project follows the following machine learning workflow:
 
 1. Dataset collection and integration.
@@ -153,9 +144,7 @@ The project follows the following machine learning workflow:
 11. Final model evaluation.
 
 12. Model interpretation and reporting.
-
 ## 5. Data Cleaning and Missingness Analysis
-
 Data cleaning was performed to improve dataset quality and ensure
 consistency before model development.
 
@@ -173,9 +162,7 @@ values.
 - Reviewing questionnaire eligibility and skip patterns.
 
 - Validating participant identifiers and dataset dimensions.
-
 ### Missingness Analysis
-
 The 51 predictor variables were classified according to their
 missing-value percentages.
 
@@ -197,14 +184,10 @@ Structural missingness, skip-pattern missingness, and genuine
 nonresponse were reviewed separately.
 
 No imputation was performed during the initial data-cleaning stage.
-
 ## 6. Exploratory Data Analysis (EDA)
-
 EDA was conducted to understand the distribution of the target variable,
 predictor characteristics, and relationships among variables.
-
 ### Target Distribution
-
 | Diabetes Status | Participants | Percentage |
 
 |---|---:|---:|
@@ -213,13 +196,11 @@ predictor characteristics, and relationships among variables.
 
 | Diabetes | 1,070 | 14.2% |
 
-| **Total** | **7,536** | **100%** |
+| ****Total**** | ****7,536**** | ****100%**** |
 
 The dataset demonstrates class imbalance, with approximately 14.2% of
 participants belonging to the diabetes class.
-
 ### Key EDA Activities
-
 - Numerical feature descriptive statistics.
 
 - Categorical and ordinal feature distributions.
@@ -231,9 +212,7 @@ participants belonging to the diabetes class.
 - Identification of highly correlated predictors.
 
 - Investigation of missingness patterns.
-
 ### Selected Observations
-
 | Variable | No Diabetes Mean | Diabetes Mean |
 
 |---|---:|---:|
@@ -250,9 +229,7 @@ participants belonging to the diabetes class.
 
 These observations describe associations within the dataset and do not
 establish causal relationships.
-
 ## 7. Data Preprocessing
-
 The modeling dataset contains 51 predictors, classified into three
 feature groups.
 
@@ -266,17 +243,15 @@ feature groups.
 
 | Ordinal | 6 |
 
-| **Total** | **51** |
-
+| ****Total**** | ****51**** |
 ### Preprocessing Techniques
-
-**Numerical Features**
+****Numerical Features****
 
 - Median imputation.
 
 - StandardScaler normalization.
 
-**Categorical Features**
+****Categorical Features****
 
 - Most-frequent imputation.
 
@@ -284,14 +259,12 @@ feature groups.
 
 - Handling previously unseen categories.
 
-**Ordinal Features**
+****Ordinal Features****
 
 - Most-frequent imputation.
 
 - StandardScaler normalization.
-
 ### Train-Test Split
-
 The dataset was divided using stratified sampling.
 
 | Dataset | Observations |
@@ -316,9 +289,7 @@ Configuration:
 
 The preprocessing pipeline was fitted on training data to avoid data
 leakage.
-
 ## 8. Machine Learning Models
-
 Multiple classification algorithms are being investigated to compare
 their performance in predicting diabetes.
 
@@ -335,28 +306,24 @@ The implemented models include:
 5. Decision Tree Classifier
 
 6. XGBoost Classifier (Pending)
-
 ### Model Evaluation Strategy
-
 Five-fold Stratified Cross-Validation is used for model evaluation.
 
 The following metrics are considered:
 
-- **Accuracy:** Overall proportion of correct predictions.
+- ****Accuracy:**** Overall proportion of correct predictions.
 
-- **Precision:** Proportion of predicted diabetes cases that
+- ****Precision:**** Proportion of predicted diabetes cases that
 are actual diabetes cases.
 
-- **Recall:** Proportion of actual diabetes cases correctly
+- ****Recall:**** Proportion of actual diabetes cases correctly
 identified.
 
-- **F1-Score:** Harmonic mean of precision and recall.
+- ****F1-Score:**** Harmonic mean of precision and recall.
 
-- **ROC-AUC:** Ability of the model to distinguish between the
+- ****ROC-AUC:**** Ability of the model to distinguish between the
 two classes.
-
 ## 9. Preliminary Model Results
-
 The following results represent the current five-fold cross-validation
 experiments.
 
@@ -365,22 +332,20 @@ experiments.
 |---|---:|---:|---:|---:|---:|
 
 | Logistic Regression (SAGA) | 77.34% | 36.25% | 78.27% | 49.53% |
-**85.67%** |
+****85.67%**** |
 
 | Random Forest | 86.61% | 55.25% | 30.73% | 39.45% | 84.85% |
 
-| Gradient Boosting | **86.98%** | **59.36%** |
+| Gradient Boosting | ****86.98%**** | ****59.36%**** |
 26.05% | 36.20% | 85.56% |
 
-| SVM | 79.78% | 38.62% | 71.73% | **50.20%** | 84.19% |
+| SVM | 79.78% | 38.62% | 71.73% | ****50.20%**** | 84.19% |
 
 | Decision Tree | 71.90% | 29.96% | 73.14% | 42.48% | 75.85% |
 
 | XGBoost (baseline) | 79.38% | 38.41% | 74.65% | 50.71% | 85.75%
 |
-
 ### Preliminary Findings
-
 - Logistic Regression achieved the highest ROC-AUC and recall.
 
 - SVM achieved the highest F1-score among the evaluated models.
@@ -391,12 +356,10 @@ experiments.
 
 - Decision Tree demonstrated the lowest ROC-AUC.
 
-**Important:** These are preliminary cross-validation results.
+****Important:**** These are preliminary cross-validation results.
 No final model has been selected, and final test-set evaluation is
 pending.
-
 ## 10. Tuned XGBoost: Final Test-Set Evaluation
-
 XGBoost was selected for hyperparameter optimization using
 RandomizedSearchCV with five-fold stratified cross-validation. The best
 configuration achieved a cross-validation F1-score of approximately
@@ -406,21 +369,23 @@ The classification threshold was selected as 0.60 using out-of-fold
 predictions from the training data. The held-out test set was not used
 to select this threshold.
 
-Final independent test-set results:
+**Final independent test-set results:**
 
   Metric                Test Result
+  ------------------- -------------
   Accuracy                   84.08%
-Precision                  45.15%
-Recall                     56.54%
-F1-score                   50.21%
-ROC-AUC                    84.87%
-Average Precision          49.93%
+  Precision                  45.15%
+  Recall                     56.54%
+  F1-score                   50.21%
+  ROC-AUC                    84.87%
+  Average Precision          49.93%
 
-Confusion matrix at threshold 0.60:
-                     Predicted No Diabetes   Predicted Diabetes
+**Confusion matrix at threshold 0.60:**
 
+                         Predicted No Diabetes   Predicted Diabetes
+  -------------------- ----------------------- --------------------
   Actual No Diabetes                     1,147                  147
-Actual Diabetes                           93                  121
+  Actual Diabetes                           93                  121
 
 The final test set contained 1,508 observations. Of the 214 participants
 in the positive class, 121 were correctly identified by the model.
@@ -429,30 +394,38 @@ These test results are distinct from the cross-validation results in
 Section 9. The threshold was chosen using training-set out-of-fold
 predictions, while final metrics were calculated on the independent test
 set.
-SHAP-Based Model Interpretation
+
+### SHAP-Based Model Interpretation
+
 SHAP analysis was performed on a sample of 300 test observations after
 preprocessing. The leading features by mean absolute SHAP value
 included:
-1. categorical__BPQ101D_1.0
-2. numerical__RIDAGEYR
-3. categorical__BPQ020_1.0
-4. numerical__BMXWAIST
-5. categorical__RIDRETH1_3.0
+
+1.  `categorical__BPQ101D_1.0`
+2.  `numerical__RIDAGEYR`
+3.  `categorical__BPQ020_1.0`
+4.  `numerical__BMXWAIST`
+5.  `categorical__RIDRETH1_3.0`
+
 Mean absolute SHAP values indicate the magnitude of a feature's
 contribution to model output, not the direction of its effect or a
 causal relationship. The precise questionnaire meaning and coding of
-BPQ101D should be checked against NHANES documentation before
+`BPQ101D` should be checked against NHANES documentation before
 assigning a substantive interpretation.
-Saved Model Artifacts
+
+### Saved Model Artifacts
+
 The fitted preprocessing and XGBoost pipeline, and a bundle containing
 the pipeline, threshold, and feature information, were saved under
-models/:
-- final_xgboost_diabetes_model.pkl
-- final_xgboost_model_bundle.pkl
+`models/`:
+
+-   `final_xgboost_diabetes_model.pkl`
+-   `final_xgboost_model_bundle.pkl`
+
 The model bundle was reloaded and verified. It contains the selected
 threshold of 0.60 and 51 input feature names.
+---
 ## 11. Repository Structure
-
 The repository is organized to separate datasets, notebooks, processed
 files, experimental results, and documentation.
 
@@ -518,12 +491,10 @@ CSCI6970-Diabetes-Prediction/
 
 ```
 
-*The structure above represents the intended repository organization.
+**The structure above represents the intended repository organization.
 Adjust notebook filenames and directories to match the files actually
-committed to GitHub.*
-
+committed to GitHub.**
 ## 12. Technologies and Libraries
-
 The project uses the following technologies:
 
 | Technology | Purpose |
@@ -545,9 +516,7 @@ The project uses the following technologies:
 | Scikit-learn | Machine learning and preprocessing |
 
 | XGBoost | Gradient boosting classification |
-
 ## 13. Current Project Progress
-
 | Project Component | Status |
 
 |---|---|
@@ -587,9 +556,7 @@ The project uses the following technologies:
 | Model Interpretation (SHAP) | Completed |
 
 | Final Research Report | In progress |
-
 ## 14. Future Work
-
 The remaining work focuses on improving model performance, validating
 results, and completing the research study.
 
@@ -617,9 +584,7 @@ feasible.
 9. Document limitations and research findings.
 
 10. Complete the final CSCI6970 research report.
-
 ## 15. Limitations
-
 The current study has several limitations:
 
 - The target variable is based on self-reported diagnosed diabetes.
@@ -639,10 +604,8 @@ relationships.
 
 - The model is intended for academic research and is not a substitute
 for clinical diagnosis.
-
 ## 16. Dataset and References
-
-**Dataset Source:**
+****Dataset Source:****
 
 National Health and Nutrition Examination Survey (NHANES), 2021--2023.
 
@@ -650,23 +613,22 @@ National Health and Nutrition Examination Survey (NHANES), 2021--2023.
 
 - NHANES Data Documentation: https://wwwn.cdc.gov/nchs/nhanes/
 
-**Organization:**
+****Organization:****
 
 National Center for Health Statistics (NCHS)  
 
 Centers for Disease Control and Prevention (CDC)
-
 ## 17. Disclaimer
-
 This project is conducted for academic and research purposes as part of
 the CSCI6970 MS Course Project.
 
 The machine learning models developed in this study are experimental and
 are not intended to provide medical diagnoses, treatment
 recommendations, or clinical decisions.
-**Project:** NHANES-Based Diabetes Prediction Using Machine
+---
+****Project:**** NHANES-Based Diabetes Prediction Using Machine
 Learning  
 
-**Course:** CSCI6970 -- MS Course Project  
+****Course:**** CSCI6970 -- MS Course Project  
 
-**Domain:** Healthcare Analytics and Machine Learning
+****Domain:**** Healthcare Analytics and Machine Learning
