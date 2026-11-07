@@ -42,13 +42,13 @@ export function PackCard({
     <Wrapper
       {...(onClick ? { type: "button" as const, onClick } : {})}
       className={cn(
-        "amplo-card flex w-full min-w-0 flex-col overflow-hidden !p-0 text-left transition",
+        "amplo-card amplo-card-clip flex w-full min-w-0 flex-col !p-0 text-left transition",
         onClick && "hover:ring-2 hover:ring-blue-500/25",
         selected && "ring-2 ring-blue-500/70",
         className,
       )}
     >
-      <div className="flex items-start justify-between gap-3 px-5 pt-5">
+      <div className="flex items-start justify-between gap-3 px-5 pt-5 sm:px-6 sm:pt-6">
         <div className="flex min-w-0 items-start gap-3">
           <span
             className={cn(
@@ -62,13 +62,13 @@ export function PackCard({
             <p className="truncate font-display text-lg font-semibold leading-tight">
               {title}
             </p>
-            <p className="mt-0.5 text-sm text-[var(--muted)]">{subtitle}</p>
+            <p className="mt-1 text-sm text-[var(--muted)]">{subtitle}</p>
           </div>
         </div>
         <FractionRing done={done} total={total} color={ring} />
       </div>
 
-      <div className="mt-3 flex-1 px-2.5 pb-3">{children}</div>
+      <div className="mt-3.5 flex-1 px-3 pb-4 sm:px-3.5 sm:pb-5">{children}</div>
     </Wrapper>
   );
 }

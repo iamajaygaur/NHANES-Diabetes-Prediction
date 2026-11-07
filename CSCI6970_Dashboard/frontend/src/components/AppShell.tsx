@@ -81,7 +81,10 @@ export function AppShell({ children }: { children: React.ReactNode }) {
   }
 
   return (
-    <div className="shell-bg min-h-screen text-[var(--foreground)]">
+    <div
+      className="shell-bg min-h-screen text-[var(--foreground)]"
+      data-density={density}
+    >
       <a
         href="#content"
         className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[60] focus:rounded-lg focus:bg-blue-600 focus:px-3 focus:py-2 focus:text-white"
@@ -298,8 +301,8 @@ export function AppShell({ children }: { children: React.ReactNode }) {
                   <div className="space-y-0.5">
                     {(
                       [
-                        ["spacious", "Spacious pills"],
-                        ["compact", "Compact pills"],
+                        ["spacious", "Spacious"],
+                        ["compact", "Compact"],
                       ] as const
                     ).map(([id, label]) => (
                       <button
@@ -434,10 +437,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
         ) : null}
       </header>
 
-      <main
-        id="content"
-        className="page-container min-w-0 overflow-x-clip pb-16 pt-[6.25rem] sm:pt-[6.75rem]"
-      >
+      <main id="content" className="page-container min-w-0 overflow-x-clip">
         {children}
       </main>
 

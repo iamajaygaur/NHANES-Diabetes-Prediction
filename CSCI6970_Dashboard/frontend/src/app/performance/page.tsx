@@ -153,8 +153,8 @@ export default function PerformancePage() {
   const baselineBest = rankedModels[0];
 
   return (
-    <div className="space-y-6 fade-in">
-      <section className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
+    <div className="page-stack fade-in">
+      <section className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
         <div className="min-w-0 max-w-3xl">
           <h1 className="font-display text-[2.4rem] font-semibold tracking-tight sm:text-[2.75rem]">
             Performance
@@ -279,12 +279,12 @@ export default function PerformancePage() {
             </div>
 
             <div
-              className="mt-5 h-[360px]"
+              className="chart-frame chart-frame-tall mt-5"
               role="img"
               aria-label={`Area chart of ${metric} across baseline models`}
             >
               <ResponsiveContainer width="100%" height="100%">
-                <AreaChart data={chartSeries} margin={{ top: 10, right: 8, left: 0, bottom: 0 }}>
+                <AreaChart data={chartSeries} margin={{ top: 14, right: 12, left: 4, bottom: 28 }}>
                   <defs>
                     <linearGradient id="perfFill" x1="0" y1="0" x2="0" y2="1">
                       <stop offset="0%" stopColor="#2563eb" stopOpacity={0.35} />
@@ -369,7 +369,7 @@ export default function PerformancePage() {
             </div>
           </article>
 
-          <article className="amplo-card overflow-hidden !p-0">
+          <article className="amplo-card amplo-card-clip !p-0">
             <div className="border-b border-[var(--border)] px-5 py-4">
               <h2 className="font-display text-lg font-semibold">Baseline table</h2>
               <p className="text-sm text-[var(--muted)]">Click a metric header to re-rank the chart</p>
@@ -417,7 +417,7 @@ export default function PerformancePage() {
       ) : null}
 
       {tab === "threshold" ? (
-        <div className="space-y-4">
+        <div className="page-stack !gap-[var(--section-gap)]">
           <article className="amplo-card p-5 sm:p-6">
             <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
               <div>
@@ -495,18 +495,22 @@ export default function PerformancePage() {
             ) : null}
 
             <div
-              className="mt-5 h-[380px]"
+              className="chart-frame chart-frame-tall mt-5"
               role="img"
               aria-label="Threshold curve for precision recall and F1"
             >
               <ResponsiveContainer width="100%" height="100%">
-                <AreaChart data={thresholdCurve.train_oof_curve}>
+                <AreaChart
+                  data={thresholdCurve.train_oof_curve}
+                  margin={{ top: 14, right: 12, left: 4, bottom: 28 }}
+                >
                   <CartesianGrid stroke="var(--border)" strokeDasharray="4 6" vertical={false} />
                   <XAxis
                     dataKey="Threshold"
                     tick={{ fill: "var(--chart-tick)", fontSize: 12 }}
                     axisLine={false}
                     tickLine={false}
+                    height={36}
                   />
                   <YAxis
                     domain={[0, 1]}
@@ -514,7 +518,7 @@ export default function PerformancePage() {
                     tick={{ fill: "var(--chart-tick)", fontSize: 12 }}
                     axisLine={false}
                     tickLine={false}
-                    width={44}
+                    width={46}
                   />
                   <Tooltip formatter={(v) => pct(Number(v))} />
                   {curveLines.Precision ? (
@@ -555,7 +559,7 @@ export default function PerformancePage() {
             </div>
           </article>
 
-          <article className="amplo-card overflow-hidden !p-0">
+          <article className="amplo-card amplo-card-clip !p-0">
             <div className="border-b border-[var(--border)] px-5 py-4">
               <h2 className="font-display text-lg font-semibold">Held-out 0.50 vs 0.60</h2>
               <p className="text-sm text-[var(--muted)]">Checked after threshold selection</p>
@@ -594,7 +598,7 @@ export default function PerformancePage() {
       ) : null}
 
       {tab === "test" ? (
-        <div className="space-y-4">
+        <div className="page-stack !gap-[var(--section-gap)]">
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {[
               ["Accuracy", m.accuracy],
@@ -661,7 +665,7 @@ export default function PerformancePage() {
       ) : null}
 
       {tab === "figures" ? (
-        <div className="grid gap-4 lg:grid-cols-2">
+        <div className="page-grid lg:grid-cols-2">
           <FigureImage
             filename="xgboost_final_confusion_matrix.png"
             alt="Confusion matrix figure"

@@ -20,7 +20,8 @@ class Settings(BaseSettings):
     api_prefix: str = "/api"
     cors_origins: str = (
         "http://localhost:3000,http://127.0.0.1:3000,"
-        "http://localhost:3001,http://127.0.0.1:3001"
+        "http://localhost:3001,http://127.0.0.1:3001,"
+        "https://diabetesinsight.vercel.app"
     )
 
     model_bundle_path: Path = BACKEND_ROOT / "models" / "final_xgboost_model_bundle.pkl"

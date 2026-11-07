@@ -18,20 +18,20 @@ export function PageHero({
   return (
     <section
       className={cn(
-        "flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between",
+        "flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between",
         className,
       )}
     >
       <div className="min-w-0 max-w-4xl">
-        <h1 className="font-display text-[2.15rem] font-semibold tracking-tight text-[var(--foreground)] sm:text-[2.55rem]">
+        <h1 className="font-display text-[2.25rem] font-semibold tracking-tight text-[var(--foreground)] sm:text-[2.6rem]">
           {title}
         </h1>
-        <p className="mt-3 text-[1.05rem] leading-relaxed text-[var(--muted)] sm:text-[1.125rem]">
+        <p className="mt-3.5 text-[1.05rem] leading-relaxed text-[var(--muted)] sm:text-[1.125rem]">
           {description}
         </p>
-        {meta ? <div className="mt-3 flex flex-wrap items-center gap-2">{meta}</div> : null}
+        {meta ? <div className="mt-3.5 flex flex-wrap items-center gap-2">{meta}</div> : null}
       </div>
-      {actions ? <div className="flex flex-wrap items-center gap-2">{actions}</div> : null}
+      {actions ? <div className="flex flex-wrap items-center gap-2.5">{actions}</div> : null}
     </section>
   );
 }

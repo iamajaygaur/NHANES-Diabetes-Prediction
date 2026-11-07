@@ -82,11 +82,11 @@ See `docs/MODEL_INTEGRATION.md`. The saved bundle includes the fitted preprocess
 
 ## Deployment notes
 
-See `docs/DEPLOY.md` for Docker, env vars, and a go-live checklist.
+See `docs/DEPLOY.md` and `docs/RENDER_SETUP.md` for Docker, free Render hosting, env vars, and a go-live checklist. Hugging Face Docker Spaces require PRO — not a free path (see `docs/HF_SPACES_SETUP.md`).
 
-1. Deploy FastAPI (or `backend/Dockerfile`) with the `backend/models` artifact.
-2. Set `CORS_ORIGINS` to the frontend origin.
-3. Deploy the Next.js app with `BACKEND_URL` pointing at the API.
+1. Deploy FastAPI with `backend/Dockerfile` (port 8000) on Render free (recommended) or another container host, with the `backend/models` artifact.
+2. Set `CORS_ORIGINS` to `https://diabetesinsight.vercel.app` (and any preview origins).
+3. Deploy the Next.js app with `BACKEND_URL` pointing at the public API origin.
 4. Do not expose raw participant-level health records or SEQN.
 
 ## Folder structure

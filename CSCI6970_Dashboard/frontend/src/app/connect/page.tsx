@@ -30,8 +30,8 @@ const LINKS = [
 
 export default function ConnectPage() {
   return (
-    <div className="min-w-0 space-y-6 fade-in">
-      <section className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
+    <div className="page-stack min-w-0 fade-in">
+      <section className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
         <div className="min-w-0 max-w-3xl">
           <h1 className="font-display text-[2.4rem] font-semibold tracking-tight sm:text-[2.75rem]">
             Get connected
@@ -128,7 +128,7 @@ export default function ConnectPage() {
         </Link>
       </article>
 
-      <section className="grid gap-4 md:grid-cols-2">
+      <section className="page-grid md:grid-cols-2">
         {LINKS.map((link) => {
           const Icon = link.icon;
           return (

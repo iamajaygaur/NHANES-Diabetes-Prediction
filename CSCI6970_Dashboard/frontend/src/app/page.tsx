@@ -201,14 +201,14 @@ export default function OverviewPage() {
   );
 
   return (
-    <div className="space-y-7 fade-in">
+    <div className="page-stack fade-in">
       {/* Hero strip — Amplo greeting composition */}
-      <section className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
+      <section className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
         <div className="min-w-0">
-          <h1 className="font-display text-[2.2rem] font-semibold tracking-tight text-[var(--foreground)] sm:text-[2.6rem]">
+          <h1 className="font-display text-[2.35rem] font-semibold tracking-tight text-[var(--foreground)] sm:text-[2.7rem]">
             {greeting}, researcher
           </h1>
-          <p className="mt-2 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-[var(--muted)]">
+          <p className="mt-3 flex flex-wrap items-center gap-x-2 gap-y-1.5 text-sm text-[var(--muted)] sm:text-[0.95rem]">
             <span>{num(data.kpis.participants)} participants ready</span>
             <span className="text-[var(--border)]">·</span>
             <span>{data.kpis.prevalence_pct}% diabetes prevalence</span>
@@ -216,7 +216,7 @@ export default function OverviewPage() {
             <span>XGBoost · threshold {data.kpis.threshold.toFixed(2)}</span>
           </p>
         </div>
-        <div className="flex flex-wrap items-center gap-2">
+        <div className="flex flex-wrap items-center gap-2.5">
           <Link
             href="/performance"
             className="inline-flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--panel)] px-4 py-2.5 text-sm font-medium text-[var(--foreground)] shadow-sm"
@@ -236,14 +236,14 @@ export default function OverviewPage() {
 
       <Disclaimer compact />
 
-      {/* Dual hero cards */}
-      <section className="grid gap-4 xl:grid-cols-2">
+      {/* Dual hero cards — natural height; charts must not clip */}
+      <section className="page-grid xl:grid-cols-2">
         {/* Cohort wallet */}
-        <article className="amplo-card flex h-full flex-col overflow-hidden p-5 sm:p-6">
+        <article className="amplo-card flex flex-col p-5 sm:p-6">
           <div className="flex items-start justify-between gap-3">
             <div>
               <p className="text-sm font-medium text-[var(--muted)]">Modeling cohort</p>
-              <p className="mt-1 font-display text-5xl font-semibold tracking-tight tabular-nums sm:text-6xl">
+              <p className="mt-2 font-display text-5xl font-semibold tracking-tight tabular-nums sm:text-6xl">
                 {num(data.kpis.participants)}
               </p>
             </div>
@@ -252,17 +252,17 @@ export default function OverviewPage() {
             </span>
           </div>
 
-          <div className="mt-4 grid grid-cols-3 gap-3">
+          <div className="mt-5 grid grid-cols-3 gap-3">
             <MiniStat label="Diabetes" value={num(data.kpis.diabetes_cases)} />
             <MiniStat label="Non-diabetes" value={num(data.kpis.non_diabetes_cases)} />
             <MiniStat label="Predictors" value={String(data.kpis.predictor_features)} />
           </div>
 
-          <div className="relative mx-auto mt-4 aspect-square w-full max-w-[420px]">
+          <div className="relative mx-auto mt-6 h-[260px] w-full max-w-[280px] sm:h-[280px] sm:max-w-[300px]">
             {/* Channel ring — grows in on every mount */}
             <div className="absolute inset-0 z-0">
               <ResponsiveContainer width="100%" height="100%">
-                <PieChart margin={{ top: 4, right: 4, bottom: 4, left: 4 }}>
+                <PieChart margin={{ top: 8, right: 8, bottom: 8, left: 8 }}>
                   <Pie
                     key={`vinyl-ring-${pieData.map((d) => d.name).join("-")}`}
                     data={pieData}
@@ -270,8 +270,8 @@ export default function OverviewPage() {
                     nameKey="name"
                     cx="50%"
                     cy="50%"
-                    innerRadius="62%"
-                    outerRadius="88%"
+                    innerRadius="58%"
+                    outerRadius="82%"
                     paddingAngle={2.5}
                     stroke="none"
                     isAnimationActive
@@ -299,7 +299,7 @@ export default function OverviewPage() {
             {/* Vinyl disc */}
             <div
               aria-hidden
-              className="pointer-events-none absolute left-1/2 top-1/2 z-10 h-[58%] w-[58%] -translate-x-1/2 -translate-y-1/2"
+              className="pointer-events-none absolute left-1/2 top-1/2 z-10 h-[54%] w-[54%] -translate-x-1/2 -translate-y-1/2"
             >
               <div className="vinyl-disc h-full w-full rounded-full bg-[radial-gradient(circle_at_32%_28%,#3f4b5f_0%,#111827_48%,#020617_100%)] shadow-[inset_0_1px_0_rgba(255,255,255,0.12),0_14px_32px_rgba(15,23,42,0.3)] ring-1 ring-white/10">
                 <div className="absolute inset-[12%] rounded-full border border-white/[0.07]" />
@@ -321,7 +321,7 @@ export default function OverviewPage() {
             </div>
           </div>
 
-          <div className="mt-1 flex flex-wrap gap-x-4 gap-y-2 text-xs text-[var(--muted)]">
+          <div className="mt-4 flex flex-wrap gap-x-4 gap-y-2 text-xs text-[var(--muted)]">
             {pieData.map((item) => (
               <span key={item.name} className="inline-flex items-center gap-1.5">
                 <span className="h-2 w-2 rounded-full" style={{ background: item.color }} />
@@ -331,10 +331,10 @@ export default function OverviewPage() {
             ))}
           </div>
 
-          <div className="mt-5 flex flex-col gap-3 rounded-2xl border border-[var(--border)] bg-[var(--panel-strong)] p-3 sm:flex-row sm:items-center sm:justify-between">
+          <div className="mt-6 flex flex-col gap-3 rounded-2xl border border-[var(--border)] bg-[var(--panel-strong)] p-4 sm:flex-row sm:items-center sm:justify-between">
             <div>
               <p className="text-sm font-semibold text-[var(--foreground)]">Pipeline autopilot</p>
-              <p className="text-xs text-[var(--muted)]">
+              <p className="mt-0.5 text-xs text-[var(--muted)]">
                 51 predictors · threshold locked at {data.kpis.threshold.toFixed(2)} for F1
               </p>
             </div>
@@ -348,11 +348,11 @@ export default function OverviewPage() {
         </article>
 
         {/* Model pulse / fans-gained analogue */}
-        <article className="amplo-card flex h-full flex-col overflow-hidden p-5 sm:p-6">
+        <article className="amplo-card flex flex-col p-5 sm:p-6">
           <div className="flex flex-wrap items-start justify-between gap-3">
             <div>
               <p className="text-sm font-medium text-[var(--muted)]">{heroLabel}</p>
-              <div className="mt-1 flex items-end gap-3">
+              <div className="mt-2 flex items-end gap-3">
                 <p className="font-display text-5xl font-semibold tracking-tight tabular-nums sm:text-6xl">
                   {pct(heroMetric)}
                 </p>
@@ -388,9 +388,9 @@ export default function OverviewPage() {
             </div>
           </div>
 
-          <div className="mt-4 h-[240px] min-h-[220px] flex-1">
+          <div className="chart-frame mt-5 shrink-0">
             <ResponsiveContainer width="100%" height="100%">
-              <AreaChart data={chartSeries} margin={{ top: 12, right: 8, left: 0, bottom: 0 }}>
+              <AreaChart data={chartSeries} margin={{ top: 16, right: 12, left: 4, bottom: 28 }}>
                 <defs>
                   <linearGradient id="pulseFill" x1="0" y1="0" x2="0" y2="1">
                     <stop offset="0%" stopColor="#2563eb" stopOpacity={0.35} />
@@ -403,7 +403,8 @@ export default function OverviewPage() {
                   tick={{ fill: "var(--chart-tick)", fontSize: 11 }}
                   axisLine={false}
                   tickLine={false}
-                  label={{ value: "Threshold", position: "insideBottomRight", offset: -2, fill: "var(--muted)", fontSize: 10 }}
+                  height={36}
+                  label={{ value: "Threshold", position: "insideBottomRight", offset: 4, fill: "var(--muted)", fontSize: 10 }}
                 />
                 <YAxis
                   domain={[0, 1]}
@@ -411,7 +412,7 @@ export default function OverviewPage() {
                   tick={{ fill: "var(--chart-tick)", fontSize: 11 }}
                   axisLine={false}
                   tickLine={false}
-                  width={42}
+                  width={46}
                 />
                 <Tooltip
                   formatter={(v) => pct(Number(v))}
@@ -437,35 +438,32 @@ export default function OverviewPage() {
           </div>
 
           {peak ? (
-            <div className="mt-3 inline-flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--panel-strong)] px-3 py-1.5 text-xs text-[var(--muted)]">
+            <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--panel-strong)] px-3 py-1.5 text-xs text-[var(--muted)]">
               Peak at threshold {peak.t}
               <span className="font-semibold text-[var(--foreground)]">{pct(peak.value)}</span>
             </div>
           ) : null}
 
-          <div className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-4">
+          <div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-4">
             {[
               { label: "Accuracy", value: pct(data.final_test_metrics.accuracy) },
               { label: "Precision", value: pct(data.final_test_metrics.precision) },
               { label: "Recall", value: pct(data.final_test_metrics.recall) },
               { label: "F1", value: pct(data.final_test_metrics.f1_score) },
             ].map((cell) => (
-              <div
-                key={cell.label}
-                className="rounded-2xl border border-[var(--border)] bg-[var(--panel-strong)] px-3 py-2.5"
-              >
+              <div key={cell.label} className="mini-stat">
                 <p className="text-[11px] text-[var(--muted)]">{cell.label}</p>
-                <p className="mt-0.5 font-display text-lg font-semibold tabular-nums">{cell.value}</p>
+                <p className="mt-1 font-display text-lg font-semibold tabular-nums">{cell.value}</p>
               </div>
             ))}
           </div>
 
-          <div className="mt-4 flex flex-col gap-3 rounded-2xl border border-[var(--border)] bg-[var(--panel-strong)] p-3 sm:flex-row sm:items-center sm:justify-between">
+          <div className="mt-5 flex flex-col gap-3 rounded-2xl border border-[var(--border)] bg-[var(--panel-strong)] p-4 sm:flex-row sm:items-center sm:justify-between">
             <div>
               <p className="text-sm font-semibold text-[var(--foreground)]">
                 Held-out test · thr {data.kpis.threshold.toFixed(2)}
               </p>
-              <p className="text-xs text-[var(--muted)]">
+              <p className="mt-0.5 text-xs text-[var(--muted)]">
                 ROC-AUC {pct(data.final_test_metrics.roc_auc)} · chosen by OOF F1, not test peeking
               </p>
             </div>
@@ -481,9 +479,9 @@ export default function OverviewPage() {
       </section>
 
       {/* Lower row — campaigns + countdown */}
-      <section className="grid gap-4 xl:grid-cols-[1.35fr_0.85fr]">
-        <article className="amplo-card overflow-hidden">
-          <div className="flex items-center justify-between border-b border-[var(--border)] px-5 py-4">
+      <section className="page-grid xl:grid-cols-[1.35fr_0.85fr]">
+        <article className="amplo-card amplo-card-clip !p-0">
+          <div className="flex items-center justify-between border-b border-[var(--border)] px-5 py-4 sm:px-6">
             <div>
               <h2 className="font-display text-lg font-semibold">Workflow on air</h2>
               <p className="text-xs text-[var(--muted)]">Research stages you can open live</p>
@@ -555,26 +553,23 @@ export default function OverviewPage() {
 
         <article className="amplo-card flex flex-col p-5 sm:p-6">
           <p className="text-sm font-medium text-[var(--muted)]">Next drop</p>
-          <h2 className="mt-1 font-display text-xl font-semibold text-[var(--foreground)]">
+          <h2 className="mt-1.5 font-display text-xl font-semibold text-[var(--foreground)]">
             Prediction Studio
           </h2>
-          <p className="mt-1 text-sm text-[var(--muted)]">
+          <p className="mt-2 text-sm text-[var(--muted)]">
             Run a local risk score with optional SHAP drivers · academic demo only
           </p>
 
-          <div className="mt-6 grid grid-cols-4 gap-2">
+          <div className="mt-6 grid grid-cols-4 gap-3">
             {[
               { label: "Feat", value: String(data.kpis.predictor_features) },
               { label: "Thr", value: data.kpis.threshold.toFixed(2).replace("0.", ".") },
               { label: "AUC", value: pct(data.final_test_metrics.roc_auc, 0) },
               { label: "F1", value: pct(data.final_test_metrics.f1_score, 0) },
             ].map((cell) => (
-              <div
-                key={cell.label}
-                className="rounded-2xl border border-[var(--border)] bg-[var(--panel-strong)] px-2 py-3 text-center"
-              >
+              <div key={cell.label} className="mini-stat text-center">
                 <p className="font-display text-xl font-semibold tabular-nums sm:text-2xl">{cell.value}</p>
-                <p className="mt-1 text-[10px] uppercase tracking-wide text-[var(--muted)]">{cell.label}</p>
+                <p className="mt-1.5 text-[10px] uppercase tracking-wide text-[var(--muted)]">{cell.label}</p>
               </div>
             ))}
           </div>
@@ -594,26 +589,26 @@ export default function OverviewPage() {
         </article>
       </section>
 
-      {/* Compact findings strip */}
+      {/* Findings strip */}
       <section className="amplo-card p-5 sm:p-6">
         <div className="flex flex-wrap items-end justify-between gap-3">
           <div>
             <h2 className="font-display text-lg font-semibold">Key findings</h2>
-            <p className="text-xs text-[var(--muted)]">Verified from research outputs</p>
+            <p className="mt-1 text-xs text-[var(--muted)]">Verified from research outputs</p>
           </div>
           <input
             id="dashboard-search"
             value={findingQuery}
             placeholder="Filter findings…"
-            className="w-full max-w-xs rounded-full border border-[var(--border)] bg-[var(--panel-strong)] px-4 py-2 text-sm outline-none ring-blue-500/20 focus:ring-2"
+            className="w-full max-w-xs rounded-full border border-[var(--border)] bg-[var(--panel-strong)] px-4 py-2.5 text-sm outline-none ring-blue-500/20 focus:ring-2"
             onChange={(e) => setFindingQuery(e.target.value)}
           />
         </div>
-        <div className="mt-4 grid gap-2 md:grid-cols-2">
+        <div className="mt-5 grid gap-3 md:grid-cols-2">
           {findings.slice(0, 6).map((finding) => (
             <div
               key={finding}
-              className="rounded-2xl border border-[var(--border)] bg-[var(--panel-strong)] px-4 py-3 text-sm text-[var(--foreground)]"
+              className="rounded-2xl border border-[var(--border)] bg-[var(--panel-strong)] px-4 py-3.5 text-sm text-[var(--foreground)]"
             >
               {finding}
             </div>
@@ -637,10 +632,10 @@ function MiniStat({
   hint?: string;
 }) {
   return (
-    <div className="rounded-2xl border border-[var(--border)] bg-[var(--panel-strong)] px-3 py-2.5">
+    <div className="mini-stat">
       <p className="text-[11px] text-[var(--muted)]">{label}</p>
-      <p className="mt-0.5 font-display text-lg font-semibold tabular-nums">{value}</p>
-      {hint ? <p className="text-[10px] text-[var(--muted)]">{hint}</p> : null}
+      <p className="mt-1 font-display text-lg font-semibold tabular-nums">{value}</p>
+      {hint ? <p className="mt-0.5 text-[10px] text-[var(--muted)]">{hint}</p> : null}
     </div>
   );
 }

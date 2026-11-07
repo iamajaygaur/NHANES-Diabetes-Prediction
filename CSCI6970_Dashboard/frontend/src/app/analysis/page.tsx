@@ -192,8 +192,8 @@ export default function AnalysisPage() {
   const selectedMiss = missingCats[activeMissing] ?? missingCats[0];
 
   return (
-    <div className="space-y-6 fade-in">
-      <section className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
+    <div className="page-stack fade-in">
+      <section className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
         <div className="min-w-0 max-w-3xl">
           <h1 className="font-display text-[2.4rem] font-semibold tracking-tight sm:text-[2.75rem]">
             Analysis
@@ -261,8 +261,8 @@ export default function AnalysisPage() {
       </div>
 
       {tab === "target" ? (
-        <div className="space-y-4">
-          <div className="grid gap-4 xl:grid-cols-[1.1fr_0.9fr]">
+        <div className="page-stack !gap-[var(--section-gap)]">
+          <div className="page-grid xl:grid-cols-[1.1fr_0.9fr]">
             <article className="amplo-card p-5 sm:p-6">
               <div className="flex items-start justify-between gap-3">
                 <div>
@@ -276,12 +276,12 @@ export default function AnalysisPage() {
                 </span>
               </div>
               <div
-                className="mt-5 h-[320px]"
+                className="chart-frame chart-frame-mid mt-5"
                 role="img"
                 aria-label="Bar chart of diabetes class distribution"
               >
                 <ResponsiveContainer width="100%" height="100%">
-                  <BarChart data={targetChart} margin={{ top: 8, right: 8, left: 0, bottom: 0 }}>
+                  <BarChart data={targetChart} margin={{ top: 12, right: 12, left: 4, bottom: 24 }}>
                     <CartesianGrid vertical={false} strokeDasharray="3 3" stroke="var(--border)" />
                     <XAxis
                       dataKey="label"
@@ -376,9 +376,9 @@ export default function AnalysisPage() {
                   </span>
                 </div>
               </div>
-              <div className="mt-5 h-[340px]" role="img" aria-label="Diabetes counts by age group">
+              <div className="chart-frame chart-frame-mid mt-5" role="img" aria-label="Diabetes counts by age group">
                 <ResponsiveContainer width="100%" height="100%">
-                  <BarChart data={ageSeries} margin={{ top: 8, right: 8, left: 0, bottom: 0 }}>
+                  <BarChart data={ageSeries} margin={{ top: 12, right: 12, left: 4, bottom: 24 }}>
                     <CartesianGrid vertical={false} strokeDasharray="3 3" stroke="var(--border)" />
                     <XAxis
                       dataKey="age"
@@ -429,7 +429,7 @@ export default function AnalysisPage() {
       ) : null}
 
       {tab === "distributions" ? (
-        <div className="space-y-4">
+        <div className="page-stack !gap-[var(--section-gap)]">
           <article className="amplo-card p-5 sm:p-6">
             <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
               <div>
@@ -453,14 +453,14 @@ export default function AnalysisPage() {
               </AmploSelect>
             </div>
 
-            <div className="mt-5 grid gap-4 xl:grid-cols-[1.25fr_0.75fr]">
+            <div className="mt-5 page-grid xl:grid-cols-[1.25fr_0.75fr]">
               <div
-                className="h-[380px]"
+                className="chart-frame chart-frame-tall"
                 role="img"
                 aria-label={`Histogram of ${metricMeta.label}`}
               >
                 <ResponsiveContainer width="100%" height="100%">
-                  <ComposedChart data={histData} margin={{ top: 8, right: 8, left: 0, bottom: 0 }}>
+                  <ComposedChart data={histData} margin={{ top: 12, right: 12, left: 4, bottom: 24 }}>
                     <CartesianGrid vertical={false} strokeDasharray="3 3" stroke="var(--border)" />
                     <XAxis
                       dataKey="label"
@@ -539,7 +539,7 @@ export default function AnalysisPage() {
       ) : null}
 
       {tab === "missing" ? (
-        <div className="space-y-4">
+        <div className="page-stack !gap-[var(--section-gap)]">
           <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-5">
             {(
               [
@@ -569,7 +569,7 @@ export default function AnalysisPage() {
             ))}
           </div>
 
-          <div className="grid gap-4 xl:grid-cols-[1.2fr_0.8fr]">
+          <div className="page-grid xl:grid-cols-[1.2fr_0.8fr]">
             <article className="amplo-card p-5 sm:p-6">
               <div className="flex items-start justify-between gap-3">
                 <div>
@@ -585,7 +585,7 @@ export default function AnalysisPage() {
                 ) : null}
               </div>
               <div
-                className="mt-5 h-[360px]"
+                className="chart-frame chart-frame-tall mt-5"
                 role="img"
                 aria-label="Missingness categories by variable count"
               >
@@ -657,7 +657,7 @@ export default function AnalysisPage() {
               </div>
             </article>
 
-            <article className="amplo-card overflow-hidden !p-0">
+            <article className="amplo-card amplo-card-clip !p-0">
               <div className="border-b border-[var(--border)] px-5 py-4">
                 <h2 className="font-display text-lg font-semibold">Top missing features</h2>
                 <p className="text-sm text-[var(--muted)]">From early missing-value summary</p>
@@ -702,7 +702,7 @@ export default function AnalysisPage() {
       ) : null}
 
       {tab === "links" ? (
-        <div className="space-y-4">
+        <div className="page-stack !gap-[var(--section-gap)]">
           <article className="amplo-card p-5 sm:p-6">
             <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
               <div>
@@ -727,7 +727,7 @@ export default function AnalysisPage() {
             </div>
 
             <div
-              className="mt-5 h-[400px]"
+              className="chart-frame chart-frame-tall mt-5"
               role="img"
               aria-label="Bar chart of strong numerical correlations"
             >
@@ -739,7 +739,7 @@ export default function AnalysisPage() {
                       (arr.slice(0, i + 1).reduce((s, r) => s + r.abs, 0) / totalAbs) * 100;
                     return { ...row, cumulative };
                   })}
-                  margin={{ top: 12, right: 16, left: 0, bottom: 8 }}
+                  margin={{ top: 12, right: 16, left: 4, bottom: 24 }}
                   onMouseMove={(state) => {
                     if (state?.activeTooltipIndex == null) return;
                     const idx = Number(state.activeTooltipIndex);
@@ -859,7 +859,7 @@ export default function AnalysisPage() {
             ) : null}
           </article>
 
-          <article className="amplo-card overflow-hidden !p-0">
+          <article className="amplo-card amplo-card-clip !p-0">
             <div className="border-b border-[var(--border)] px-5 py-4">
               <h2 className="font-display text-lg font-semibold">Correlation table</h2>
               <p className="text-sm text-[var(--muted)]">{analysis.disclaimer}</p>

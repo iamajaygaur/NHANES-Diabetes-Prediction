@@ -193,8 +193,8 @@ export default function ProjectPage() {
   const { kpis, final_test_metrics: metrics, project } = overview;
 
   return (
-    <div className="space-y-6 fade-in">
-      <section className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
+    <div className="page-stack fade-in">
+      <section className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
         <div className="min-w-0 max-w-3xl">
           <h1 className="font-display text-[2.4rem] font-semibold tracking-tight sm:text-[2.75rem]">
             Detailed project
@@ -260,8 +260,8 @@ export default function ProjectPage() {
       <Disclaimer compact />
 
       {tab === "brief" ? (
-        <div className="space-y-4">
-          <div className="grid gap-4 xl:grid-cols-[1.15fr_0.85fr]">
+        <div className="page-stack !gap-[var(--section-gap)]">
+          <div className="page-grid xl:grid-cols-[1.15fr_0.85fr]">
             <article className="amplo-card p-5 sm:p-6">
               <div className="flex items-start justify-between gap-3">
                 <div>
@@ -371,8 +371,8 @@ export default function ProjectPage() {
       ) : null}
 
       {tab === "methods" ? (
-        <div className="space-y-4">
-          <div className="grid gap-4 xl:grid-cols-2">
+        <div className="page-stack !gap-[var(--section-gap)]">
+          <div className="page-grid xl:grid-cols-2">
             <article className="amplo-card p-5 sm:p-6">
               <div className="flex items-center gap-2">
                 <Layers className="h-4 w-4 text-blue-600" />
@@ -459,20 +459,20 @@ export default function ProjectPage() {
       ) : null}
 
       {tab === "explain" ? (
-        <div className="space-y-4">
-          <div className="grid gap-4 xl:grid-cols-[1.2fr_0.8fr]">
+        <div className="page-stack !gap-[var(--section-gap)]">
+          <div className="page-grid xl:grid-cols-[1.2fr_0.8fr]">
             <article className="amplo-card p-5 sm:p-6">
               <h2 className="font-display text-lg font-semibold">Top SHAP features</h2>
               <p className="mt-1 text-sm text-[var(--muted)]">
                 Mean absolute SHAP from the saved research table
               </p>
               <div
-                className="mt-4 h-[420px]"
+                className="chart-frame chart-frame-tall mt-4"
                 role="img"
                 aria-label="Bar chart of top global SHAP feature importances"
               >
                 <ResponsiveContainer width="100%" height="100%">
-                  <BarChart data={chartData} layout="vertical" margin={{ left: 12 }}>
+                  <BarChart data={chartData} layout="vertical" margin={{ top: 8, left: 12, right: 16, bottom: 16 }}>
                     <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" />
                     <XAxis type="number" tick={{ fill: "var(--chart-tick)" }} />
                     <YAxis
@@ -488,7 +488,7 @@ export default function ProjectPage() {
               </div>
             </article>
 
-            <article className="amplo-card overflow-hidden !p-0">
+            <article className="amplo-card amplo-card-clip !p-0">
               <div className="border-b border-[var(--border)] px-5 py-4">
                 <h2 className="font-display text-lg font-semibold">Highlighted drivers</h2>
                 <p className="text-sm text-[var(--muted)]">From xgboost_shap_feature_importance.csv</p>
@@ -538,7 +538,7 @@ export default function ProjectPage() {
       ) : null}
 
       {tab === "limits" ? (
-        <div className="space-y-4">
+        <div className="page-stack !gap-[var(--section-gap)]">
           <section className="rounded-[1.75rem] border border-[var(--warning-border)] bg-[var(--warning-bg)] p-5 sm:p-6">
             <div className="flex gap-3">
               <AlertTriangle className="mt-0.5 h-5 w-5 shrink-0 text-[var(--warning-icon)]" />

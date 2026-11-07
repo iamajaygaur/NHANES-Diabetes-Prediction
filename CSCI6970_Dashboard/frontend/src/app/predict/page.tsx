@@ -200,8 +200,8 @@ export default function PredictPage() {
   if (!schema || !active) return <LoadingState label="Loading model schema…" />;
 
   return (
-    <div className="min-w-0 space-y-6 fade-in">
-      <section className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
+    <div className="page-stack min-w-0 fade-in">
+      <section className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
         <div className="min-w-0 max-w-3xl">
           <h1 className="font-display text-[2.4rem] font-semibold tracking-tight sm:text-[2.75rem]">
             Prediction studio
@@ -473,7 +473,7 @@ export default function PredictPage() {
           </article>
         </div>
       ) : (
-        <div className="space-y-4" aria-live="polite">
+        <div className="page-stack !gap-[var(--section-gap)]" aria-live="polite">
           {!result ? (
             <article className="amplo-card p-8 text-center">
               <p className="font-display text-xl font-semibold">No result yet</p>
@@ -490,7 +490,7 @@ export default function PredictPage() {
             </article>
           ) : (
             <>
-              <div className="grid gap-4 lg:grid-cols-[0.9fr_1.1fr]">
+              <div className="page-grid lg:grid-cols-[0.9fr_1.1fr]">
                 <article className="amplo-card flex flex-col p-5 sm:p-6">
                   <div className="flex items-start justify-between gap-3">
                     <div>
@@ -543,7 +543,7 @@ export default function PredictPage() {
                         : ""}
                     </p>
                     <div
-                      className="mt-4 h-[340px]"
+                      className="chart-frame chart-frame-mid mt-4"
                       role="img"
                       aria-label="Bar chart of local SHAP feature contributions"
                     >
@@ -554,7 +554,7 @@ export default function PredictPage() {
                             value: row.shap_value,
                           }))}
                           layout="vertical"
-                          margin={{ left: 16, right: 12 }}
+                          margin={{ top: 12, left: 16, right: 12, bottom: 24 }}
                         >
                           <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" />
                           <XAxis type="number" tick={{ fill: "var(--chart-tick)", fontSize: 11 }} />

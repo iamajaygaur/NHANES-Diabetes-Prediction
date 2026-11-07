@@ -117,8 +117,8 @@ export default function DatasetPage() {
   if (!summary) return <LoadingState />;
 
   return (
-    <div className="min-w-0 space-y-6 fade-in">
-      <section className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
+    <div className="page-stack min-w-0 fade-in">
+      <section className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
         <div className="min-w-0 max-w-3xl">
           <h1 className="font-display text-[2.4rem] font-semibold tracking-tight sm:text-[2.75rem]">
             Dataset
@@ -179,8 +179,8 @@ export default function DatasetPage() {
         </button>
       ) : null}
 
-      <div className="grid min-w-0 gap-4 2xl:grid-cols-[minmax(0,1fr)_minmax(300px,360px)]">
-        <div className="grid min-w-0 gap-4 md:grid-cols-2">
+      <div className="page-grid min-w-0 2xl:grid-cols-[minmax(0,1fr)_minmax(300px,360px)]">
+        <div className="page-grid min-w-0 md:grid-cols-2">
           {cards.map((card) => {
             const Icon = "icon" in card ? card.icon : Ruler;
             return (
@@ -220,8 +220,8 @@ export default function DatasetPage() {
           })}
         </div>
 
-        <div className="min-w-0 space-y-4 2xl:sticky 2xl:top-28 2xl:self-start">
-          <article className="amplo-card overflow-hidden p-5 sm:p-6">
+        <div className="page-stack min-w-0 !gap-[var(--section-gap)] 2xl:sticky 2xl:top-28 2xl:self-start">
+          <article className="amplo-card p-5 sm:p-6">
             <h2 className="font-display text-lg font-semibold">Missingness board</h2>
             <p className="mt-1 text-sm text-[var(--muted)]">
               Highest missing rates in the modeling table

@@ -81,14 +81,14 @@ export function ShapImpactChart({ rows }: { rows: ShapRow[] }) {
       </div>
 
       <div
-        className="mt-5 h-[380px]"
+        className="chart-frame chart-frame-tall mt-5"
         role="img"
         aria-label="Interactive chart of mean absolute SHAP impact by feature"
       >
         <ResponsiveContainer width="100%" height="100%">
           <ComposedChart
             data={data}
-            margin={{ top: 16, right: 18, left: 4, bottom: 8 }}
+            margin={{ top: 16, right: 18, left: 4, bottom: 24 }}
             onMouseMove={(state) => {
               if (state?.activeTooltipIndex == null) return;
               const idx = Number(state.activeTooltipIndex);
