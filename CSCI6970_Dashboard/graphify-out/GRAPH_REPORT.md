@@ -1,7 +1,7 @@
 # Graph Report - CSCI6970_Dashboard  (2026-11-07)
 
 ## Corpus Check
-- 69 files · ~28,694 words
+- 69 files · ~28,745 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 137 file(s) not represented in the graph (top: .csv 120, (none) 7, .pkl 3)
 - WARNING: 137 of 233 files seen (59%) have no supported extractor and are missing from this graph entirely. It may look complete while representing only part of the codebase.
@@ -12,7 +12,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `3170577e`
+- Built from commit: `5f3bf51c`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -53,25 +53,25 @@
 1. `cn()` - 44 edges
 2. `NHANES-Based Diabetes Prediction Using Machine Learning` - 21 edges
 3. `PredictPage()` - 18 edges
-4. `lucide-react` - 16 edges
-5. `compilerOptions` - 16 edges
+4. `compilerOptions` - 16 edges
+5. `lucide-react` - 16 edges
 6. `DataService` - 15 edges
 7. `ModelService` - 14 edges
-8. `react` - 14 edges
-9. `apiGet()` - 14 edges
+8. `apiGet()` - 14 edges
+9. `react` - 14 edges
 10. `get_settings()` - 13 edges
 
 ## Surprising Connections (you probably didn't know these)
+- `CardDescription()` --calls--> `cn()`  [EXTRACTED]
+  frontend/src/components/ui/card.tsx → frontend/src/lib/utils.ts
 - `CardHeader()` --calls--> `cn()`  [EXTRACTED]
   frontend/src/components/ui/card.tsx → frontend/src/lib/utils.ts
 - `CardTitle()` --calls--> `cn()`  [EXTRACTED]
   frontend/src/components/ui/card.tsx → frontend/src/lib/utils.ts
-- `CardDescription()` --calls--> `cn()`  [EXTRACTED]
-  frontend/src/components/ui/card.tsx → frontend/src/lib/utils.ts
-- `health()` --uses--> `HealthResponse`  [INFERRED]
-  backend/app/api/routes.py → backend/app/schemas/predict.py
-- `predict()` --uses--> `PredictRequest`  [INFERRED]
-  backend/app/api/routes.py → backend/app/schemas/predict.py
+- `OverviewPage()` --calls--> `ErrorState()`  [EXTRACTED]
+  frontend/src/app/page.tsx → frontend/src/components/States.tsx
+- `OverviewPage()` --calls--> `LoadingState()`  [EXTRACTED]
+  frontend/src/app/page.tsx → frontend/src/components/States.tsx
 
 ## Import Cycles
 - None detected.

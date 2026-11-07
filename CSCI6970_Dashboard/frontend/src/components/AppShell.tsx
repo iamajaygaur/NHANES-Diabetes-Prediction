@@ -29,14 +29,15 @@ import { CREATOR, SITE } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 type HeaderDensity = "spacious" | "compact";
-const HEADER_DENSITY_KEY = "diabetesinsight-header-density";
+/* v2: default compact so returning visitors aren't stuck on oversized spacious */
+const HEADER_DENSITY_KEY = "diabetesinsight-header-density-v2";
 
 export function AppShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [profileOpen, setProfileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [density, setDensity] = useState<HeaderDensity>("spacious");
+  const [density, setDensity] = useState<HeaderDensity>("compact");
   const { theme, setTheme } = useTheme();
   const profileRef = useRef<HTMLDivElement>(null);
 
@@ -103,7 +104,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
         {/*
           Amplo: SEPARATE pills (not one mono shell) —
           brand · long nav · search · theme · New · creator
-          Density: spacious (default) | compact
+          Density: compact (default) | spacious
         */}
         <div className="header-row flex items-center gap-2 lg:gap-3">
           <div
@@ -301,8 +302,8 @@ export function AppShell({ children }: { children: React.ReactNode }) {
                   <div className="space-y-0.5">
                     {(
                       [
-                        ["spacious", "Spacious"],
                         ["compact", "Compact"],
+                        ["spacious", "Spacious"],
                       ] as const
                     ).map(([id, label]) => (
                       <button

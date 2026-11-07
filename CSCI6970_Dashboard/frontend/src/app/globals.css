@@ -77,19 +77,23 @@ html.light {
   --soft: #f1f5f9;
 }
 
+/*
+  Bake ~75% browser zoom into the design so 100% Chrome looks like the
+  denser Amplo composition the dashboard was tuned against (not oversized).
+*/
 html {
-  font-size: 16px;
+  font-size: 75%;
 }
 
 @media (min-width: 1024px) {
   html {
-    font-size: 16.5px;
+    font-size: 78%;
   }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1536px) {
   html {
-    font-size: 17px;
+    font-size: 81%;
   }
 }
 
@@ -99,46 +103,46 @@ body {
 }
 
 /*
-  App density tokens — spacious is the comfortable Amplo default.
+  App density tokens — compact is the default (matches preferred 100% zoom).
   data-density lives on .shell-bg (and the float header) from AppShell.
 */
 .shell-bg,
-.shell-bg[data-density="spacious"] {
-  --page-stack-gap: 2rem;
-  --section-gap: 1.35rem;
-  --grid-gap: 1.35rem;
-  --card-pad: 1.65rem;
-  --card-pad-lg: 1.9rem;
-  --chart-min-h: 280px;
-  --chart-mid-h: 320px;
-  --chart-tall-h: 360px;
-  --content-offset: 7.75rem;
-  --mini-stat-pad-y: 0.85rem;
-  --mini-stat-pad-x: 0.9rem;
+.shell-bg[data-density="compact"] {
+  --page-stack-gap: 1.15rem;
+  --section-gap: 0.85rem;
+  --grid-gap: 0.85rem;
+  --card-pad: 1.05rem;
+  --card-pad-lg: 1.2rem;
+  --chart-min-h: 200px;
+  --chart-mid-h: 240px;
+  --chart-tall-h: 280px;
+  --content-offset: 5.75rem;
+  --mini-stat-pad-y: 0.5rem;
+  --mini-stat-pad-x: 0.6rem;
 }
 
-.shell-bg[data-density="compact"] {
-  --page-stack-gap: 1.35rem;
-  --section-gap: 0.9rem;
-  --grid-gap: 0.9rem;
-  --card-pad: 1.2rem;
-  --card-pad-lg: 1.35rem;
+.shell-bg[data-density="spacious"] {
+  --page-stack-gap: 1.5rem;
+  --section-gap: 1.05rem;
+  --grid-gap: 1.05rem;
+  --card-pad: 1.25rem;
+  --card-pad-lg: 1.4rem;
   --chart-min-h: 230px;
-  --chart-mid-h: 280px;
-  --chart-tall-h: 320px;
+  --chart-mid-h: 270px;
+  --chart-tall-h: 310px;
   --content-offset: 6.5rem;
-  --mini-stat-pad-y: 0.55rem;
-  --mini-stat-pad-x: 0.65rem;
+  --mini-stat-pad-y: 0.65rem;
+  --mini-stat-pad-x: 0.75rem;
 }
 
 @media (min-width: 640px) {
   .shell-bg,
-  .shell-bg[data-density="spacious"] {
-    --content-offset: 8.25rem;
+  .shell-bg[data-density="compact"] {
+    --content-offset: 6.15rem;
   }
 
-  .shell-bg[data-density="compact"] {
-    --content-offset: 6.85rem;
+  .shell-bg[data-density="spacious"] {
+    --content-offset: 7rem;
   }
 }
 

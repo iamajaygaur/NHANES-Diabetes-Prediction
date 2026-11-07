@@ -203,12 +203,12 @@ export default function OverviewPage() {
   return (
     <div className="page-stack fade-in">
       {/* Hero strip — Amplo greeting composition */}
-      <section className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+      <section className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
         <div className="min-w-0">
-          <h1 className="font-display text-[2.35rem] font-semibold tracking-tight text-[var(--foreground)] sm:text-[2.7rem]">
+          <h1 className="font-display text-[1.85rem] font-semibold tracking-tight text-[var(--foreground)] sm:text-[2.15rem]">
             {greeting}, researcher
           </h1>
-          <p className="mt-3 flex flex-wrap items-center gap-x-2 gap-y-1.5 text-sm text-[var(--muted)] sm:text-[0.95rem]">
+          <p className="mt-2 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-[var(--muted)] sm:text-[0.9rem]">
             <span>{num(data.kpis.participants)} participants ready</span>
             <span className="text-[var(--border)]">·</span>
             <span>{data.kpis.prevalence_pct}% diabetes prevalence</span>
@@ -239,11 +239,11 @@ export default function OverviewPage() {
       {/* Dual hero cards — Amplo full content; natural height + page scroll (no clip) */}
       <section className="page-grid items-start xl:grid-cols-2">
         {/* Cohort wallet — match Image 1: vinyl + legend + Pipeline autopilot */}
-        <article className="amplo-card flex min-h-0 flex-col overflow-visible p-5 sm:p-6">
+        <article className="amplo-card flex min-h-0 flex-col overflow-visible p-4 sm:p-5">
           <div className="flex shrink-0 items-start justify-between gap-3">
             <div>
               <p className="text-sm font-medium text-[var(--muted)]">Modeling cohort</p>
-              <p className="mt-2 font-display text-5xl font-semibold tracking-tight tabular-nums sm:text-6xl">
+              <p className="mt-1.5 font-display text-4xl font-semibold tracking-tight tabular-nums sm:text-5xl">
                 {num(data.kpis.participants)}
               </p>
             </div>
@@ -252,13 +252,13 @@ export default function OverviewPage() {
             </span>
           </div>
 
-          <div className="mt-5 grid shrink-0 grid-cols-3 gap-3">
+          <div className="mt-4 grid shrink-0 grid-cols-3 gap-2.5">
             <MiniStat label="Diabetes" value={num(data.kpis.diabetes_cases)} />
             <MiniStat label="Non-diabetes" value={num(data.kpis.non_diabetes_cases)} />
             <MiniStat label="Predictors" value={String(data.kpis.predictor_features)} />
           </div>
 
-          <div className="relative mx-auto mt-6 aspect-square w-full max-w-[300px] shrink-0 sm:max-w-[320px]">
+          <div className="relative mx-auto mt-4 aspect-square w-full max-w-[220px] shrink-0 sm:max-w-[240px]">
             {/* Channel ring — grows in on every mount */}
             <div className="absolute inset-0 z-0">
               <ResponsiveContainer width="100%" height="100%">
@@ -314,7 +314,7 @@ export default function OverviewPage() {
                 <span className="text-[10px] font-medium uppercase leading-none tracking-[0.26em] text-slate-400 sm:text-[11px]">
                   Cohort
                 </span>
-                <span className="mt-2.5 font-display text-2xl font-semibold leading-none tracking-tight tabular-nums text-white sm:text-[28px]">
+                <span className="mt-1.5 font-display text-xl font-semibold leading-none tracking-tight tabular-nums text-white sm:text-2xl">
                   {data.kpis.prevalence_pct}%
                 </span>
               </div>
@@ -331,7 +331,7 @@ export default function OverviewPage() {
             ))}
           </div>
 
-          <div className="mt-6 flex shrink-0 flex-col gap-3 rounded-2xl border border-[var(--border)] bg-[var(--panel-strong)] p-4 sm:flex-row sm:items-center sm:justify-between">
+          <div className="mt-4 flex shrink-0 flex-col gap-2.5 rounded-2xl border border-[var(--border)] bg-[var(--panel-strong)] p-3 sm:flex-row sm:items-center sm:justify-between">
             <div>
               <p className="text-sm font-semibold text-[var(--foreground)]">Pipeline autopilot</p>
               <p className="mt-0.5 text-xs text-[var(--muted)]">
@@ -348,12 +348,12 @@ export default function OverviewPage() {
         </article>
 
         {/* Model pulse — match Image 1: peak + metrics grid + Held-out footer */}
-        <article className="amplo-card flex min-h-0 flex-col overflow-visible p-5 sm:p-6">
+        <article className="amplo-card flex min-h-0 flex-col overflow-visible p-4 sm:p-5">
           <div className="flex shrink-0 flex-wrap items-start justify-between gap-3">
             <div>
               <p className="text-sm font-medium text-[var(--muted)]">{heroLabel}</p>
-              <div className="mt-2 flex items-end gap-3">
-                <p className="font-display text-5xl font-semibold tracking-tight tabular-nums sm:text-6xl">
+              <div className="mt-1.5 flex items-end gap-2.5">
+                <p className="font-display text-4xl font-semibold tracking-tight tabular-nums sm:text-5xl">
                   {pct(heroMetric)}
                 </p>
                 <span className="mb-1 inline-flex items-center gap-1 rounded-full bg-emerald-500/15 px-2.5 py-1 text-xs font-semibold text-emerald-700 dark:text-emerald-300">
@@ -388,9 +388,9 @@ export default function OverviewPage() {
             </div>
           </div>
 
-          <div className="chart-frame mt-5 shrink-0">
+          <div className="chart-frame mt-3 shrink-0">
             <ResponsiveContainer width="100%" height="100%">
-              <AreaChart data={chartSeries} margin={{ top: 16, right: 12, left: 4, bottom: 28 }}>
+              <AreaChart data={chartSeries} margin={{ top: 10, right: 8, left: 0, bottom: 22 }}>
                 <defs>
                   <linearGradient id="pulseFill" x1="0" y1="0" x2="0" y2="1">
                     <stop offset="0%" stopColor="#2563eb" stopOpacity={0.35} />
@@ -438,13 +438,13 @@ export default function OverviewPage() {
           </div>
 
           {peak ? (
-            <div className="mt-4 inline-flex shrink-0 items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--panel-strong)] px-3 py-1.5 text-xs text-[var(--muted)]">
+            <div className="mt-3 inline-flex shrink-0 items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--panel-strong)] px-3 py-1 text-xs text-[var(--muted)]">
               Peak at threshold {peak.t}
               <span className="font-semibold text-[var(--foreground)]">{pct(peak.value)}</span>
             </div>
           ) : null}
 
-          <div className="mt-5 grid shrink-0 grid-cols-2 gap-3 sm:grid-cols-4">
+          <div className="mt-3 grid shrink-0 grid-cols-2 gap-2.5 sm:grid-cols-4">
             {[
               { label: "Accuracy", value: pct(data.final_test_metrics.accuracy) },
               { label: "Precision", value: pct(data.final_test_metrics.precision) },
@@ -453,12 +453,12 @@ export default function OverviewPage() {
             ].map((cell) => (
               <div key={cell.label} className="mini-stat">
                 <p className="text-[11px] text-[var(--muted)]">{cell.label}</p>
-                <p className="mt-1 font-display text-lg font-semibold tabular-nums">{cell.value}</p>
+                <p className="mt-0.5 font-display text-base font-semibold tabular-nums">{cell.value}</p>
               </div>
             ))}
           </div>
 
-          <div className="mt-5 flex shrink-0 flex-col gap-3 rounded-2xl border border-[var(--border)] bg-[var(--panel-strong)] p-4 sm:flex-row sm:items-center sm:justify-between">
+          <div className="mt-4 flex shrink-0 flex-col gap-2.5 rounded-2xl border border-[var(--border)] bg-[var(--panel-strong)] p-3 sm:flex-row sm:items-center sm:justify-between">
             <div>
               <p className="text-sm font-semibold text-[var(--foreground)]">
                 Held-out test · thr {data.kpis.threshold.toFixed(2)}

@@ -144,9 +144,9 @@
     "semantic_hash": ""
   },
   "frontend/src/app/page.tsx": {
-    "mtime": 1794089939.5544913,
-    "seen": 1794089949.782565,
-    "ast_hash": "d7a4cbb071858045605339c877374345",
+    "mtime": 1794090340.2153718,
+    "seen": 1794090355.816308,
+    "ast_hash": "4b149721511f2584e02f952ced9e4000",
     "semantic_hash": ""
   },
   "frontend/src/app/performance/page.tsx": {
@@ -174,9 +174,9 @@
     "semantic_hash": ""
   },
   "frontend/src/components/AppShell.tsx": {
-    "mtime": 1794089226.0142949,
-    "seen": 1794089437.5302699,
-    "ast_hash": "3f5018746bf40c0d9affacc4122e76db",
+    "mtime": 1794090317.961404,
+    "seen": 1794090355.8163142,
+    "ast_hash": "9f8dbfd9d1d1af54b5d16afb0c2beb3f",
     "semantic_hash": ""
   },
   "frontend/src/components/DemoTour.tsx": {
@@ -216,9 +216,9 @@
     "semantic_hash": ""
   },
   "frontend/src/components/PageHero.tsx": {
-    "mtime": 1794089233.4212377,
-    "seen": 1794089437.530276,
-    "ast_hash": "86bf5757318df57d16e16d1dac253b87",
+    "mtime": 1794090349.3444295,
+    "seen": 1794090355.81632,
+    "ast_hash": "72e08165b482e802e47f8db4f3d98c60",
     "semantic_hash": ""
   },
   "frontend/src/components/ProgressRing.tsx": {
