@@ -1,0 +1,9 @@
+Variable,Refused_Code,Observed_Refused_Count,Dont_Know_Code,Observed_Dont_Know_Count,Verification_Status
+ALQ111,7,0,9,5,Verified against official CDC ALQ_L documentation
+ALQ121,77,2,99,3,Verified against official CDC ALQ_L documentation
+ALQ130,777,4,999,10,Verified against official CDC ALQ_L documentation
+ALQ142,77,8,99,12,Verified against official CDC ALQ_L documentation
+ALQ151,7,1,9,4,Verified against official CDC ALQ_L documentation
+ALQ170,777,3,999,3,Verified against official CDC ALQ_L documentation
+ALQ270,77,4,99,9,Verified against official CDC ALQ_L documentation
+ALQ280,77,3,99,7,Verified against official CDC ALQ_L documentation

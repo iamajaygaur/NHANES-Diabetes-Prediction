@@ -1,0 +1,20 @@
+Feature,Feature_Type,Missing_Percentage,NHANES_Feature_Group,Eligibility_Review,Skip_Pattern_Review,Treatment_Decision
+ALQ111,Categorical,32.94,Alcohol,Adults 18+,No response skips to end of section,Review skip-related missingness
+ALQ121,Ordinal,49.31,Alcohol,Adults 18+,Response 0 skips to ALQ151,Review skip-related missingness
+ALQ130,Numerical,49.62,Alcohol,Adults 18+,No specific skip established in reviewed excerpt,Review nonresponse and eligibility
+ALQ142,Ordinal,70.93,Alcohol,Adults 18+,Response 0 skips to ALQ151,Review skip-related missingness
+ALQ151,Categorical,39.13,Alcohol,Adults 18+,No specific skip established in reviewed excerpt,Review nonresponse and eligibility
+ALQ170,Numerical,84.85,Alcohol,Adults 18+,No specific skip established in reviewed excerpt,Review nonresponse and eligibility
+ALQ270,Ordinal,83.77,Alcohol,Adults 18+,No specific skip established in reviewed excerpt,Review nonresponse and eligibility
+ALQ280,Ordinal,88.0,Alcohol,Adults 18+,No specific skip established in reviewed excerpt,Review nonresponse and eligibility
+BPQ030,Categorical,63.46,Blood Pressure Questionnaire,Participants aged 16+,Questionnaire routing requires review of BPQ020 responses,Review questionnaire-related missingness
+BPQ150,Categorical,63.19,Blood Pressure Questionnaire,Participants aged 16+,2021-2023 medication question uses revised skip pattern,Review questionnaire-related missingness
+DMDYRUSR,Ordinal,80.93,Demographic,Participants born outside the United States,Question applies to participants born outside the U.S.; U.S.-born participants are not asked,Review structural missingness related to country of birth
+RIDEXPRG,Categorical,80.4,Demographic,Females aged 20–44 in the public-use release,Values released only for females aged 20–44 due to disclosure concerns,Review age- and sex-related structural missingness
+PAD790Q,Numerical,21.88,Physical Activity,Participants aged 18+,Moderate leisure-time activity frequency; review related unit and response routing,Review eligibility and questionnaire-related missingness
+PAD800,Numerical,22.12,Physical Activity,Participants aged 18+,Review questionnaire routing and corresponding activity responses,Review eligibility and questionnaire-related missingness
+PAD810Q,Numerical,55.32,Physical Activity,Participants aged 18+,Vigorous leisure-time activity frequency; review related unit and response routing,Review eligibility and questionnaire-related missingness
+PAD820,Numerical,55.48,Physical Activity,Participants aged 18+,Review questionnaire routing and corresponding activity responses,Review eligibility and questionnaire-related missingness
+SMD641,Numerical,97.04,Smoking,Participants aged 12+,Age-specific questionnaire routing; review past-30-day smoking eligibility,Review eligibility-related missingness
+SMD650,Numerical,85.14,Smoking,Participants aged 12+,Age-specific questionnaire routing; review past-30-day smoking eligibility,Review eligibility-related missingness
+SMQ040,Categorical,58.96,Smoking,Adults aged 18+,"SMQ020 responses of No, Refused, or Don't know skip the follow-up question",Review skip-related missingness

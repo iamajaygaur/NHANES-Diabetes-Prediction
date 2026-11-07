@@ -1,0 +1,9 @@
+Variable,Original_SAS_Missing_Count,Working_Dataset_Missing_Count,Cleaning_Status
+ALQ111,0,2482,No SAS missing representation observed
+ALQ121,786,3716,Previously converted to NaN in cleaning_df
+ALQ130,0,3739,No SAS missing representation observed
+ALQ142,1610,5345,Previously converted to NaN in cleaning_df
+ALQ151,0,2949,No SAS missing representation observed
+ALQ170,1049,6394,Previously converted to NaN in cleaning_df
+ALQ270,969,6313,Previously converted to NaN in cleaning_df
+ALQ280,1287,6632,Previously converted to NaN in cleaning_df

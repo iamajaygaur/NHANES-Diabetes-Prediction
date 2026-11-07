@@ -1,0 +1,3 @@
+Model,Best CV Average Precision,Average Precision SD,Best CV ROC-AUC,ROC-AUC SD,Best CV F1 at default cutoff,Parameters
+XGBoost,0.5029750802794319,0.02442700406915901,0.8603094389971236,0.014400827955209033,0.4999903466660264,"{""classifier__colsample_bytree"": 0.8, ""classifier__learning_rate"": 0.03, ""classifier__max_depth"": 3, ""classifier__min_child_weight"": 1, ""classifier__n_estimators"": 300, ""classifier__reg_lambda"": 5, ""classifier__subsample"": 0.8}"
+SVM,0.47511603375582573,0.02277090431546244,0.8480393928545185,0.014574388774160797,0.500935533926819,"{""classifier__C"": 0.5, ""classifier__gamma"": ""scale""}"

@@ -1,0 +1,9 @@
+Variable,Missing_Count,Missing_Percentage,Available_Count,Retention_Decision,Treatment_Decision,Verification_Status
+ALQ111,2482,32.94,5054,Retain provisionally,Verify questionnaire eligibility and skip patterns,Official NHANES documentation review required
+ALQ121,3716,49.31,3820,Retain provisionally,Verify questionnaire eligibility and skip patterns,Official NHANES documentation review required
+ALQ130,3739,49.62,3797,Retain provisionally,Verify questionnaire eligibility and skip patterns,Official NHANES documentation review required
+ALQ142,5345,70.93,2191,Retain provisionally,Verify questionnaire eligibility and skip patterns,Official NHANES documentation review required
+ALQ151,2949,39.13,4587,Retain provisionally,Verify questionnaire eligibility and skip patterns,Official NHANES documentation review required
+ALQ170,6394,84.85,1142,Retain provisionally,Verify questionnaire eligibility and skip patterns,Official NHANES documentation review required
+ALQ270,6313,83.77,1223,Retain provisionally,Verify questionnaire eligibility and skip patterns,Official NHANES documentation review required
+ALQ280,6632,88.0,904,Retain provisionally,Verify questionnaire eligibility and skip patterns,Official NHANES documentation review required

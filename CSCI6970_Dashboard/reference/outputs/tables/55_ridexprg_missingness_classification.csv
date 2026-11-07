@@ -1,0 +1,5 @@
+Missingness_Category,Participant_Count,RIDEXPRG_Missing_Count,Treatment_Recommendation
+Male participants,3365,3365,Retain as not applicable; do not impute automatically
+Female participants aged 45-49,244,244,Document public-release age restriction; do not impute
+Female participants aged 50 or older,2450,2450,Document public-release age restriction; do not impute
+Eligible female participants aged 20-44,1477,0,"Retain observed responses, including response code 3"

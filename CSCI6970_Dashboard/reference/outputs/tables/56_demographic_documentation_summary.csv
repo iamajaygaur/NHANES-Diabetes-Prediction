@@ -1,0 +1,9 @@
+Variable,Missingness_Category,Participant_Count,Percentage_of_Dataset,Treatment_Recommendation,RIDEXPRG_Missing_Count
+DMDYRUSR,Structural missingness,6039,80.13535031847134,Retain as structurally missing; do not impute automatically,
+DMDYRUSR,Refused,12,0.1592356687898089,Treat as nonresponse; evaluate separately,
+DMDYRUSR,Don't know,34,0.4511677282377919,Treat as nonresponse; evaluate separately,
+DMDYRUSR,Unknown eligibility,14,0.1857749469214437,Retain as unknown eligibility; investigate separately,
+RIDEXPRG,Male participants,3365,,Retain as not applicable; do not impute automatically,3365.0
+RIDEXPRG,Female participants aged 45-49,244,,Document public-release age restriction; do not impute,244.0
+RIDEXPRG,Female participants aged 50 or older,2450,,Document public-release age restriction; do not impute,2450.0
+RIDEXPRG,Eligible female participants aged 20-44,1477,,"Retain observed responses, including response code 3",0.0

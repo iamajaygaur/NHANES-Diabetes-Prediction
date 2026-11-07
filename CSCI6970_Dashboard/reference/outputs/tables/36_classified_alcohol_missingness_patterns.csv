@@ -1,0 +1,4 @@
+Variable_1,Variable_2,Missingness_Correlation,Both_Missing,Only_Variable_1_Missing,Only_Variable_2_Missing,Neither_Missing,Missingness_Pattern
+ALQ121,ALQ130,0.9917904306215107,3712,4,27,3793,Partial shared missingness
+ALQ111,ALQ151,0.8711050122267924,2477,5,472,4582,Partial shared missingness
+ALQ121,ALQ151,0.8020788724349908,2929,787,20,3800,Partial shared missingness

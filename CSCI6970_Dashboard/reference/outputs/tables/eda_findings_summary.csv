@@ -1,0 +1,8 @@
+Analysis,Finding
+Target Distribution,Diabetes prevalence is 14.2%; the target classes are imbalanced.
+Numerical Features,"Age, BMI, weight, blood pressure, and activity variables show varying distributions."
+Categorical Features,Participant characteristics and questionnaire responses have different category distributions.
+Ordinal Features,Several alcohol and demographic variables have substantial missingness.
+Correlation Analysis,12 numerical feature pairs have absolute Pearson correlation of at least 0.70.
+Diabetes Group Comparison,"The diabetes group has higher average age, BMI, and body weight."
+Missingness,Structural and questionnaire skip-pattern missingness must be considered during preprocessing.

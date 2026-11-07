@@ -1,0 +1,3 @@
+Variable,Missing_Count,Missing_Percentage,Observed_Responses,Retention_Decision,Reason,Further_Action
+DMDYRUSR,6099,80.93152866242038,6,Retain provisionally,Retained pending verification of eligibility and questionnaire routing rules.,Verify response codes and missingness using official NHANES documentation.
+RIDEXPRG,6059,80.40074309978769,3,Retain provisionally,Retained pending verification of eligibility and questionnaire routing rules.,Verify response codes and participant eligibility using official NHANES documentation.

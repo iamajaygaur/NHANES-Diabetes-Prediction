@@ -1,0 +1,5 @@
+Missingness_Category,Participant_Count,Percentage_of_Dataset,Treatment_Recommendation
+Structural missingness,6039,80.13535031847134,Retain as structurally missing; do not impute automatically
+Refused,12,0.15923566878980894,Treat as nonresponse; evaluate separately
+Don't know,34,0.45116772823779194,Treat as nonresponse; evaluate separately
+Unknown eligibility,14,0.18577494692144375,Retain as unknown eligibility; investigate separately

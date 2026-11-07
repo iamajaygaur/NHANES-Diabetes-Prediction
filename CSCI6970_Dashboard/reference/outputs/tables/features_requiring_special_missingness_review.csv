@@ -1,0 +1,20 @@
+Feature,Feature_Type,Missing_Count,Missing_Percentage,Missingness_Category,Missing_Percentage_No_Diabetes,Missing_Percentage_Diabetes,Absolute_Difference,Large_Diabetes_Group_Difference,Requires_Special_Review
+SMD641,Numerical,7313,97.04,Very High,97.11,96.64,0.47,False,True
+ALQ280,Ordinal,6632,88.0,Very High,87.44,91.4,3.96,False,True
+SMD650,Numerical,6416,85.14,Very High,85.28,84.3,0.98,False,True
+ALQ170,Numerical,6394,84.85,Very High,83.65,92.06,8.4,False,True
+ALQ270,Ordinal,6313,83.77,Very High,83.0,88.41,5.41,False,True
+DMDYRUSR,Ordinal,6099,80.93,Very High,80.93,80.93,0.0,False,True
+RIDEXPRG,Categorical,6059,80.4,Very High,77.88,95.61,17.72,True,True
+ALQ142,Ordinal,5345,70.93,Very High,69.58,79.07,9.49,False,True
+BPQ030,Categorical,4782,63.46,Very High,69.22,28.6,40.63,True,True
+BPQ150,Categorical,4762,63.19,Very High,69.04,27.85,41.19,True,True
+SMQ040,Categorical,4443,58.96,High,60.52,49.53,10.98,True,True
+PAD820,Numerical,4181,55.48,High,51.96,76.73,24.76,True,True
+PAD810Q,Numerical,4169,55.32,High,51.81,76.54,24.73,True,True
+ALQ130,Numerical,3739,49.62,High,48.11,58.69,10.58,True,True
+ALQ121,Ordinal,3716,49.31,High,47.85,58.13,10.28,True,True
+ALQ151,Categorical,2949,39.13,High,38.56,42.62,4.06,False,True
+ALQ111,Categorical,2482,32.94,High,32.99,32.62,0.37,False,True
+PAD800,Numerical,1667,22.12,Moderate,19.69,36.82,17.13,True,True
+PAD790Q,Numerical,1649,21.88,Moderate,19.52,36.17,16.65,True,True

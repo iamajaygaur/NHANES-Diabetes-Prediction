@@ -1,0 +1,490 @@
+{
+  "model_name": "Tuned XGBoost",
+  "threshold": 0.6,
+  "target": "DIABETES",
+  "random_state": 42,
+  "feature_names": [
+    "RIDSTATR",
+    "RIAGENDR",
+    "RIDAGEYR",
+    "RIDRETH1",
+    "RIDRETH3",
+    "RIDEXMON",
+    "DMQMILIZ",
+    "DMDBORN4",
+    "DMDYRUSR",
+    "DMDEDUC2",
+    "DMDMARTZ",
+    "RIDEXPRG",
+    "DMDHHSIZ",
+    "INDFMPIR",
+    "BMXBMI",
+    "BMXWT",
+    "BMXHT",
+    "BMXWAIST",
+    "BPXOSY1",
+    "BPXODI1",
+    "BPXOSY2",
+    "BPXODI2",
+    "BPXOSY3",
+    "BPXODI3",
+    "BPXOPLS1",
+    "BPXOPLS2",
+    "BPXOPLS3",
+    "BPQ020",
+    "BPQ030",
+    "BPQ150",
+    "BPQ080",
+    "BPQ101D",
+    "PAD790Q",
+    "PAD790U",
+    "PAD800",
+    "PAD810Q",
+    "PAD810U",
+    "PAD820",
+    "PAD680",
+    "SMQ020",
+    "SMQ040",
+    "SMD641",
+    "SMD650",
+    "ALQ111",
+    "ALQ121",
+    "ALQ130",
+    "ALQ142",
+    "ALQ270",
+    "ALQ280",
+    "ALQ151",
+    "ALQ170"
+  ],
+  "feature_groups": {
+    "numerical": [
+      "RIDAGEYR",
+      "INDFMPIR",
+      "BMXBMI",
+      "BMXWT",
+      "BMXHT",
+      "BMXWAIST",
+      "BPXOSY1",
+      "BPXOSY2",
+      "BPXOSY3",
+      "BPXODI1",
+      "BPXODI2",
+      "BPXODI3",
+      "BPXOPLS1",
+      "BPXOPLS2",
+      "BPXOPLS3",
+      "PAD790Q",
+      "PAD800",
+      "PAD810Q",
+      "PAD820",
+      "PAD680",
+      "SMD641",
+      "SMD650",
+      "ALQ130",
+      "ALQ170",
+      "DMDHHSIZ"
+    ],
+    "categorical": [
+      "RIDSTATR",
+      "RIAGENDR",
+      "RIDRETH1",
+      "RIDRETH3",
+      "RIDEXMON",
+      "DMQMILIZ",
+      "DMDBORN4",
+      "DMDMARTZ",
+      "RIDEXPRG",
+      "BPQ020",
+      "BPQ030",
+      "BPQ150",
+      "BPQ080",
+      "BPQ101D",
+      "PAD790U",
+      "PAD810U",
+      "SMQ020",
+      "SMQ040",
+      "ALQ111",
+      "ALQ151"
+    ],
+    "ordinal": [
+      "DMDYRUSR",
+      "DMDEDUC2",
+      "ALQ121",
+      "ALQ142",
+      "ALQ270",
+      "ALQ280"
+    ]
+  },
+  "categorical_options": {
+    "RIDSTATR": [
+      1,
+      2
+    ],
+    "RIAGENDR": [
+      1,
+      2
+    ],
+    "RIDRETH1": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "RIDRETH3": [
+      1,
+      2,
+      3,
+      4,
+      6,
+      7
+    ],
+    "RIDEXMON": [
+      1,
+      2
+    ],
+    "DMQMILIZ": [
+      1,
+      2
+    ],
+    "DMDBORN4": [
+      1,
+      2
+    ],
+    "DMDMARTZ": [
+      1,
+      2,
+      3
+    ],
+    "RIDEXPRG": [
+      1,
+      2,
+      3
+    ],
+    "BPQ020": [
+      1,
+      2
+    ],
+    "BPQ030": [
+      1,
+      2
+    ],
+    "BPQ150": [
+      1,
+      2
+    ],
+    "BPQ080": [
+      1,
+      2
+    ],
+    "BPQ101D": [
+      1,
+      2
+    ],
+    "PAD790U": [
+      "b''",
+      "b'D'",
+      "b'M'",
+      "b'W'",
+      "b'Y'"
+    ],
+    "PAD810U": [
+      "b''",
+      "b'D'",
+      "b'M'",
+      "b'W'",
+      "b'Y'"
+    ],
+    "SMQ020": [
+      1,
+      2
+    ],
+    "SMQ040": [
+      1,
+      2,
+      3
+    ],
+    "ALQ111": [
+      1,
+      2
+    ],
+    "ALQ151": [
+      1,
+      2
+    ]
+  },
+  "ordinal_options": {
+    "DMDYRUSR": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "DMDEDUC2": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "ALQ121": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "ALQ142": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "ALQ270": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "ALQ280": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ]
+  },
+  "numerical_ranges": {
+    "RIDAGEYR": {
+      "min": 20.0,
+      "max": 80.0,
+      "median": 56.0,
+      "mean": 53.33903927813164
+    },
+    "INDFMPIR": {
+      "min": 0.01,
+      "max": 5.0,
+      "median": 2.85,
+      "mean": 2.9414876433532546
+    },
+    "BMXBMI": {
+      "min": 11.1,
+      "max": 74.8,
+      "median": 28.4,
+      "mean": 29.741776773296248
+    },
+    "BMXWT": {
+      "min": 27.9,
+      "max": 248.2,
+      "median": 79.8,
+      "mean": 83.08566695576756
+    },
+    "BMXHT": {
+      "min": 133.0,
+      "max": 200.7,
+      "median": 166.5,
+      "mean": 166.94398684893582
+    },
+    "BMXWAIST": {
+      "min": 60.0,
+      "max": 187.0,
+      "median": 99.3,
+      "mean": 100.81883666486584
+    },
+    "BPXOSY1": {
+      "min": 75.0,
+      "max": 232.0,
+      "median": 120.0,
+      "mean": 122.94938948858609
+    },
+    "BPXOSY2": {
+      "min": 65.0,
+      "max": 233.0,
+      "median": 120.0,
+      "mean": 122.81449326718639
+    },
+    "BPXOSY3": {
+      "min": 62.0,
+      "max": 232.0,
+      "median": 120.0,
+      "mean": 122.59722962173682
+    },
+    "BPXODI1": {
+      "min": 37.0,
+      "max": 142.0,
+      "median": 75.0,
+      "mean": 75.2868518846222
+    },
+    "BPXODI2": {
+      "min": 32.0,
+      "max": 139.0,
+      "median": 74.0,
+      "mean": 74.62243090007087
+    },
+    "BPXODI3": {
+      "min": 26.0,
+      "max": 136.0,
+      "median": 74.0,
+      "mean": 74.26602734860593
+    },
+    "BPXOPLS1": {
+      "min": 35.0,
+      "max": 129.0,
+      "median": 70.0,
+      "mean": 71.01804990267209
+    },
+    "BPXOPLS2": {
+      "min": 32.0,
+      "max": 131.0,
+      "median": 71.0,
+      "mean": 71.59868887313962
+    },
+    "BPXOPLS3": {
+      "min": 31.0,
+      "max": 128.0,
+      "median": 71.0,
+      "mean": 72.01598295151838
+    },
+    "PAD790Q": {
+      "min": 1.0,
+      "max": 180.0,
+      "median": 3.0,
+      "mean": 3.3679293358246984
+    },
+    "PAD800": {
+      "min": 1.0,
+      "max": 720.0,
+      "median": 45.0,
+      "mean": 63.25932867609473
+    },
+    "PAD810Q": {
+      "min": 1.0,
+      "max": 200.0,
+      "median": 2.0,
+      "mean": 2.5675675675675675
+    },
+    "PAD820": {
+      "min": 1.0,
+      "max": 900.0,
+      "median": 45.0,
+      "mean": 60.00238450074516
+    },
+    "PAD680": {
+      "min": 1.0,
+      "max": 1380.0,
+      "median": 300.0,
+      "mean": 361.42866729298083
+    },
+    "SMD641": {
+      "min": 1.0,
+      "max": 30.0,
+      "median": 10.0,
+      "mean": 12.174887892376681
+    },
+    "SMD650": {
+      "min": 1.0,
+      "max": 95.0,
+      "median": 10.0,
+      "mean": 11.60982142857143
+    },
+    "ALQ130": {
+      "min": 1.0,
+      "max": 15.0,
+      "median": 2.0,
+      "mean": 2.602054253357914
+    },
+    "ALQ170": {
+      "min": 1.0,
+      "max": 30.0,
+      "median": 2.0,
+      "mean": 4.159369527145359
+    },
+    "DMDHHSIZ": {
+      "min": 1.0,
+      "max": 7.0,
+      "median": 2.0,
+      "mean": 2.5682059447983017
+    }
+  },
+  "synthetic_demo": {
+    "RIDSTATR": 2,
+    "RIAGENDR": 2,
+    "RIDAGEYR": 56.0,
+    "RIDRETH1": 3,
+    "RIDRETH3": 3,
+    "RIDEXMON": 2,
+    "DMQMILIZ": 2,
+    "DMDBORN4": 1,
+    "DMDYRUSR": 6,
+    "DMDEDUC2": 5,
+    "DMDMARTZ": 1,
+    "RIDEXPRG": 2,
+    "DMDHHSIZ": 2.0,
+    "INDFMPIR": 2.85,
+    "BMXBMI": 28.4,
+    "BMXWT": 79.8,
+    "BMXHT": 166.5,
+    "BMXWAIST": 99.3,
+    "BPXOSY1": 120.0,
+    "BPXODI1": 75.0,
+    "BPXOSY2": 120.0,
+    "BPXODI2": 74.0,
+    "BPXOSY3": 120.0,
+    "BPXODI3": 74.0,
+    "BPXOPLS1": 70.0,
+    "BPXOPLS2": 71.0,
+    "BPXOPLS3": 71.0,
+    "BPQ020": 2,
+    "BPQ030": 1,
+    "BPQ150": 1,
+    "BPQ080": 2,
+    "BPQ101D": 2,
+    "PAD790Q": 3.0,
+    "PAD790U": "b'W'",
+    "PAD800": 45.0,
+    "PAD810Q": 2.0,
+    "PAD810U": "b''",
+    "PAD820": 45.0,
+    "PAD680": 300.0,
+    "SMQ020": 2,
+    "SMQ040": 3,
+    "SMD641": 10.0,
+    "SMD650": 10.0,
+    "ALQ111": 1,
+    "ALQ121": 6,
+    "ALQ130": 2.0,
+    "ALQ142": 10,
+    "ALQ270": 10,
+    "ALQ280": 10,
+    "ALQ151": 2,
+    "ALQ170": 2.0
+  },
+  "synthetic_demo_expected": {
+    "probability": 0.10274630039930344,
+    "predicted_class": 0
+  }
+}
