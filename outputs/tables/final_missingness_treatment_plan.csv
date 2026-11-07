@@ -1,0 +1,4 @@
+Missingness_Category,Identification,Treatment_Plan
+Structural missingness,"Age-, sex-, or birthplace-related eligibility restrictions",Preserve as missing; assess feature suitability during preprocessing
+Skip-pattern missingness,Missing values caused by previous questionnaire responses,Preserve as missing; do not automatically impute
+Genuine nonresponse,"Refused, don't know, or unanswered responses",Evaluate appropriate imputation or missingness handling during preprocessing

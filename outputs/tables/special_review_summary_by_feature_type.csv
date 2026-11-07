@@ -1,0 +1,4 @@
+Feature_Type,Total_Features,Average_Missingness,High_Difference_Count
+Categorical,6,56.35,4
+Numerical,8,58.93,5
+Ordinal,5,74.59,1
