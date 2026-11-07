@@ -157,22 +157,26 @@ body {
   gap: var(--grid-gap, 1.35rem);
 }
 
-/* Chart host: guaranteed height, never clip SVG / axis labels */
+/* Chart host: height from tokens; aspect keeps curves from looking pancake-wide */
 .chart-frame {
   width: 100%;
-  min-height: var(--chart-min-h, 280px);
-  height: var(--chart-min-h, 280px);
+  min-height: var(--chart-min-h, 200px);
+  height: auto;
+  aspect-ratio: 16 / 9;
+  max-height: 280px;
   overflow: visible;
 }
 
 .chart-frame-mid {
-  min-height: var(--chart-mid-h, 320px);
-  height: var(--chart-mid-h, 320px);
+  min-height: var(--chart-mid-h, 240px);
+  aspect-ratio: 16 / 10;
+  max-height: 320px;
 }
 
 .chart-frame-tall {
-  min-height: var(--chart-tall-h, 360px);
-  height: var(--chart-tall-h, 360px);
+  min-height: var(--chart-tall-h, 280px);
+  aspect-ratio: 16 / 11;
+  max-height: 380px;
 }
 
 body {
@@ -216,7 +220,8 @@ body {
 
 .page-container {
   width: 100%;
-  max-width: 1560px;
+  /* Keep composition from stretching on ultrawide displays */
+  max-width: 1180px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 1.15rem;
@@ -261,7 +266,7 @@ main.page-container {
   left: 50%;
   transform: translateX(-50%);
   width: calc(100% - 1.5rem);
-  max-width: 1560px;
+  max-width: 1180px;
   z-index: 50;
   /* Outer shell is transparent — individual pills carry the surface */
   background: transparent;

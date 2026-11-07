@@ -237,7 +237,7 @@ export default function OverviewPage() {
       <Disclaimer compact />
 
       {/* Dual hero cards — Amplo full content; natural height + page scroll (no clip) */}
-      <section className="page-grid items-start xl:grid-cols-2">
+      <section className="page-grid items-start lg:grid-cols-2">
         {/* Cohort wallet — match Image 1: vinyl + legend + Pipeline autopilot */}
         <article className="amplo-card flex min-h-0 flex-col overflow-visible p-4 sm:p-5">
           <div className="flex shrink-0 items-start justify-between gap-3">
@@ -258,11 +258,11 @@ export default function OverviewPage() {
             <MiniStat label="Predictors" value={String(data.kpis.predictor_features)} />
           </div>
 
-          <div className="relative mx-auto mt-4 aspect-square w-full max-w-[220px] shrink-0 sm:max-w-[240px]">
-            {/* Channel ring — grows in on every mount */}
+          {/* Fixed square so Recharts pie stays circular (no oval stretch) */}
+          <div className="relative mx-auto mt-4 h-[220px] w-[220px] shrink-0 sm:h-[236px] sm:w-[236px]">
             <div className="absolute inset-0 z-0">
-              <ResponsiveContainer width="100%" height="100%">
-                <PieChart margin={{ top: 6, right: 6, bottom: 6, left: 6 }}>
+              <ResponsiveContainer width="100%" height="100%" aspect={1}>
+                <PieChart margin={{ top: 4, right: 4, bottom: 4, left: 4 }}>
                   <Pie
                     key={`vinyl-ring-${pieData.map((d) => d.name).join("-")}`}
                     data={pieData}
