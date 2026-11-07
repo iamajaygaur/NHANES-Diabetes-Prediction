@@ -365,8 +365,9 @@ html.dark .header-pill {
   box-shadow: var(--surface-lift);
   transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 220ms ease;
   padding: var(--card-pad, 1.65rem);
-  /* Prefer natural height + page scroll; do not clip chart SVGs by default */
+  /* Prefer natural height + page scroll; never clip Overview footers/legends */
   overflow: visible;
+  max-height: none;
 }
 
 @media (min-width: 640px) {
