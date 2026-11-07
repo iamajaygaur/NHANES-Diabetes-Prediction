@@ -115,18 +115,18 @@ export function AppShell({ children }: { children: React.ReactNode }) {
           >
             <Link
               href="/"
-              className="header-pill flex min-w-0 items-center gap-2.5 rounded-full py-1.5 pl-1.5 pr-3"
+              aria-label={`${SITE.productName} home`}
+              className="header-pill flex min-w-0 items-center gap-2 rounded-full py-1.5 pl-1.5 pr-3"
             >
-              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 to-sky-400 text-white shadow-md shadow-blue-500/30">
-                <Activity className="h-4 w-4" />
+              <span
+                aria-hidden
+                className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-blue-600 text-white"
+              >
+                <Activity className="h-3.5 w-3.5" strokeWidth={2.25} />
               </span>
-              <span className="min-w-0">
-                <span className="block truncate font-display text-sm font-semibold leading-tight tracking-tight">
-                  {SITE.productName}
-                </span>
-                <span className="block truncate text-[11px] leading-tight text-[var(--muted)]">
-                  by {CREATOR.name}
-                </span>
+              <span className="truncate font-display text-[13px] font-semibold leading-none tracking-[-0.02em]">
+                Diabetes
+                <span className="text-blue-600">Insight</span>
               </span>
             </Link>
 
