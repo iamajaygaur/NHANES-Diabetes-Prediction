@@ -135,6 +135,7 @@ export default function AnalysisPage() {
       const value = Number(row.Correlation ?? Object.values(row)[2] ?? 0);
       return {
         id: i,
+        rank: String(i + 1),
         pair: `${shortFeat(f1)} × ${shortFeat(f2)}`,
         full: `${f1} × ${f2}`,
         f1,
@@ -147,9 +148,10 @@ export default function AnalysisPage() {
 
   const missingCats = useMemo(() => {
     if (!missing) return [];
-    return missing.category_summary.map((row) => ({
+    return missing.category_summary.map((row, i) => ({
       label: row.Missingness_Category.replace(/_/g, " "),
       short: row.Missingness_Category.replace(/_/g, " ").slice(0, 12),
+      rank: String(i + 1),
       count: row.Variable_Count,
     }));
   }, [missing]);
@@ -575,24 +577,24 @@ export default function AnalysisPage() {
                 <div>
                   <h2 className="font-display text-xl font-semibold">Missingness by category</h2>
                   <p className="mt-1 text-sm text-[var(--muted)]">
-                    Hover a column to inspect variable counts
+                    Ranked bars · name shown in the pill and tooltip
                   </p>
                 </div>
                 {selectedMiss ? (
-                  <span className="rounded-full bg-[var(--foreground)] px-3 py-1 text-xs font-medium text-[var(--panel)]">
-                    {selectedMiss.label}
+                  <span className="max-w-[55%] truncate rounded-full bg-[var(--foreground)] px-3 py-1 text-xs font-medium text-[var(--panel)]">
+                    #{selectedMiss.rank} · {selectedMiss.label}
                   </span>
                 ) : null}
               </div>
               <div
-                className="chart-frame chart-frame-tall mt-5"
+                className="chart-frame chart-frame-tall mt-5 min-w-0"
                 role="img"
                 aria-label="Missingness categories by variable count"
               >
                 <ResponsiveContainer width="100%" height="100%">
                   <BarChart
                     data={missingCats}
-                    margin={{ top: 8, right: 8, left: 0, bottom: 24 }}
+                    margin={{ top: 8, right: 8, left: 0, bottom: 4 }}
                     onMouseMove={(state) => {
                       if (state?.activeTooltipIndex == null) return;
                       const idx = Number(state.activeTooltipIndex);
@@ -601,28 +603,24 @@ export default function AnalysisPage() {
                   >
                     <CartesianGrid vertical={false} strokeDasharray="3 3" stroke="var(--border)" />
                     <XAxis
-                      dataKey="short"
+                      dataKey="rank"
                       tickLine={false}
                       axisLine={false}
                       interval={0}
-                      height={48}
+                      height={28}
                       tick={({ x, y, payload, index }) => {
                         const on = index === activeMissing;
                         return (
-                          <g transform={`translate(${x},${y})`}>
-                            <foreignObject x={-36} y={4} width={72} height={28}>
-                              <div
-                                className={cn(
-                                  "flex h-full items-center justify-center rounded-full px-1 text-[10px] font-medium",
-                                  on
-                                    ? "bg-[var(--foreground)] text-[var(--panel)]"
-                                    : "text-[var(--muted)]",
-                                )}
-                              >
-                                {payload.value}
-                              </div>
-                            </foreignObject>
-                          </g>
+                          <text
+                            x={x}
+                            y={y + 14}
+                            textAnchor="middle"
+                            fill={on ? "var(--foreground)" : "var(--chart-tick)"}
+                            fontSize={11}
+                            fontWeight={on ? 700 : 500}
+                          >
+                            {payload.value}
+                          </text>
                         );
                       }}
                     />
@@ -711,7 +709,7 @@ export default function AnalysisPage() {
                   <h2 className="font-display text-xl font-semibold">Strong correlations</h2>
                 </div>
                 <p className="mt-1 text-sm text-[var(--muted)]">
-                  Top |Pearson r| pairs · hover to select · correlation ≠ causation
+                  Top |Pearson r| pairs · tap a bar · names appear below
                 </p>
               </div>
               <div className="flex items-center gap-3 text-xs text-[var(--muted)]">
@@ -727,7 +725,7 @@ export default function AnalysisPage() {
             </div>
 
             <div
-              className="chart-frame chart-frame-tall mt-5"
+              className="chart-frame chart-frame-tall mt-5 min-w-0"
               role="img"
               aria-label="Bar chart of strong numerical correlations"
             >
@@ -739,7 +737,7 @@ export default function AnalysisPage() {
                       (arr.slice(0, i + 1).reduce((s, r) => s + r.abs, 0) / totalAbs) * 100;
                     return { ...row, cumulative };
                   })}
-                  margin={{ top: 12, right: 16, left: 4, bottom: 24 }}
+                  margin={{ top: 12, right: 12, left: 0, bottom: 4 }}
                   onMouseMove={(state) => {
                     if (state?.activeTooltipIndex == null) return;
                     const idx = Number(state.activeTooltipIndex);
@@ -748,28 +746,24 @@ export default function AnalysisPage() {
                 >
                   <CartesianGrid vertical={false} strokeDasharray="3 3" stroke="var(--border)" />
                   <XAxis
-                    dataKey="pair"
+                    dataKey="rank"
                     tickLine={false}
                     axisLine={false}
                     interval={0}
-                    height={54}
+                    height={28}
                     tick={({ x, y, payload, index }) => {
                       const on = index === activeCorr;
                       return (
-                        <g transform={`translate(${x},${y})`}>
-                          <foreignObject x={-40} y={2} width={80} height={44}>
-                            <div
-                              className={cn(
-                                "flex h-full items-center justify-center rounded-full px-1 text-center text-[10px] font-medium leading-tight",
-                                on
-                                  ? "bg-[var(--foreground)] text-[var(--panel)]"
-                                  : "text-[var(--muted)]",
-                              )}
-                            >
-                              {payload.value}
-                            </div>
-                          </foreignObject>
-                        </g>
+                        <text
+                          x={x}
+                          y={y + 14}
+                          textAnchor="middle"
+                          fill={on ? "var(--foreground)" : "var(--chart-tick)"}
+                          fontSize={11}
+                          fontWeight={on ? 700 : 500}
+                        >
+                          {payload.value}
+                        </text>
                       );
                     }}
                   />
@@ -835,11 +829,13 @@ export default function AnalysisPage() {
 
             {selectedCorr ? (
               <div className="mt-4 grid gap-3 rounded-2xl border border-[var(--border)] bg-[var(--panel-strong)] p-4 sm:grid-cols-4">
-                <div className="sm:col-span-2">
+                <div className="min-w-0 sm:col-span-2">
                   <p className="text-[11px] uppercase tracking-wide text-[var(--muted)]">
-                    Selected pair
+                    Selected pair · #{selectedCorr.rank}
                   </p>
-                  <p className="mt-1 text-sm font-semibold">{selectedCorr.full}</p>
+                  <p className="mt-1 break-all text-sm font-semibold sm:break-words">
+                    {selectedCorr.full}
+                  </p>
                 </div>
                 <div>
                   <p className="text-[11px] uppercase tracking-wide text-[var(--muted)]">
