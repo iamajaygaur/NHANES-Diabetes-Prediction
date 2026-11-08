@@ -205,7 +205,7 @@ export default function OverviewPage() {
       {/* Hero strip — Amplo greeting composition */}
       <section className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
         <div className="min-w-0">
-          <h1 className="font-display text-[1.85rem] font-semibold tracking-tight text-[var(--foreground)] sm:text-[2.15rem]">
+          <h1 className="break-words font-display text-[1.55rem] font-semibold tracking-tight text-[var(--foreground)] sm:text-[2.15rem]">
             {greeting}, researcher
           </h1>
           <p className="mt-2 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-[var(--muted)] sm:text-[0.9rem]">
@@ -239,27 +239,27 @@ export default function OverviewPage() {
       {/* Dual hero cards — Amplo full content; natural height + page scroll (no clip) */}
       <section className="page-grid items-start lg:grid-cols-2">
         {/* Cohort wallet — match Image 1: vinyl + legend + Pipeline autopilot */}
-        <article className="amplo-card flex min-h-0 flex-col overflow-visible p-4 sm:p-5">
-          <div className="flex shrink-0 items-start justify-between gap-3">
-            <div>
+        <article className="amplo-card flex min-h-0 min-w-0 flex-col overflow-visible p-3.5 sm:p-5">
+          <div className="flex shrink-0 items-start justify-between gap-2 sm:gap-3">
+            <div className="min-w-0">
               <p className="text-sm font-medium text-[var(--muted)]">Modeling cohort</p>
-              <p className="mt-1.5 font-display text-4xl font-semibold tracking-tight tabular-nums sm:text-5xl">
+              <p className="mt-1.5 font-display text-3xl font-semibold tracking-tight tabular-nums sm:text-5xl">
                 {num(data.kpis.participants)}
               </p>
             </div>
-            <span className="rounded-full bg-blue-600/10 px-3 py-1 text-xs font-semibold text-blue-700 dark:text-blue-300">
+            <span className="shrink-0 rounded-full bg-blue-600/10 px-2.5 py-1 text-[11px] font-semibold text-blue-700 dark:text-blue-300 sm:px-3 sm:text-xs">
               NHANES
             </span>
           </div>
 
-          <div className="mt-4 grid shrink-0 grid-cols-3 gap-2.5">
+          <div className="mt-4 grid shrink-0 grid-cols-3 gap-1.5 sm:gap-2.5">
             <MiniStat label="Diabetes" value={num(data.kpis.diabetes_cases)} />
             <MiniStat label="Non-diabetes" value={num(data.kpis.non_diabetes_cases)} />
             <MiniStat label="Predictors" value={String(data.kpis.predictor_features)} />
           </div>
 
-          {/* Fixed square so Recharts pie stays circular (no oval stretch) */}
-          <div className="relative mx-auto mt-4 h-[220px] w-[220px] shrink-0 sm:h-[236px] sm:w-[236px]">
+          {/* Fixed square so Recharts pie stays circular; shrink on narrow phones */}
+          <div className="relative mx-auto mt-4 h-[min(200px,70vw)] w-[min(200px,70vw)] shrink-0 sm:h-[236px] sm:w-[236px]">
             <div className="absolute inset-0 z-0">
               <ResponsiveContainer width="100%" height="100%" aspect={1}>
                 <PieChart margin={{ top: 4, right: 4, bottom: 4, left: 4 }}>
@@ -348,12 +348,12 @@ export default function OverviewPage() {
         </article>
 
         {/* Model pulse — match Image 1: peak + metrics grid + Held-out footer */}
-        <article className="amplo-card flex min-h-0 flex-col overflow-visible p-4 sm:p-5">
-          <div className="flex shrink-0 flex-wrap items-start justify-between gap-3">
-            <div>
+        <article className="amplo-card flex min-h-0 min-w-0 flex-col overflow-visible p-3.5 sm:p-5">
+          <div className="flex shrink-0 flex-wrap items-start justify-between gap-2 sm:gap-3">
+            <div className="min-w-0">
               <p className="text-sm font-medium text-[var(--muted)]">{heroLabel}</p>
-              <div className="mt-1.5 flex items-end gap-2.5">
-                <p className="font-display text-4xl font-semibold tracking-tight tabular-nums sm:text-5xl">
+              <div className="mt-1.5 flex flex-wrap items-end gap-2.5">
+                <p className="font-display text-3xl font-semibold tracking-tight tabular-nums sm:text-5xl">
                   {pct(heroMetric)}
                 </p>
                 <span className="mb-1 inline-flex items-center gap-1 rounded-full bg-emerald-500/15 px-2.5 py-1 text-xs font-semibold text-emerald-700 dark:text-emerald-300">
@@ -490,7 +490,7 @@ export default function OverviewPage() {
               View all
             </Link>
           </div>
-          <div className="overflow-x-auto">
+          <div className="table-scroll">
             <table className="w-full min-w-[560px] text-left text-sm">
               <thead>
                 <tr className="text-xs uppercase tracking-wide text-[var(--muted)]">
@@ -560,7 +560,7 @@ export default function OverviewPage() {
             Run a local risk score with optional SHAP drivers · academic demo only
           </p>
 
-          <div className="mt-6 grid grid-cols-4 gap-3">
+          <div className="mt-6 grid grid-cols-2 gap-2 sm:grid-cols-4 sm:gap-3">
             {[
               { label: "Feat", value: String(data.kpis.predictor_features) },
               { label: "Thr", value: data.kpis.threshold.toFixed(2).replace("0.", ".") },
@@ -568,7 +568,7 @@ export default function OverviewPage() {
               { label: "F1", value: pct(data.final_test_metrics.f1_score, 0) },
             ].map((cell) => (
               <div key={cell.label} className="mini-stat text-center">
-                <p className="font-display text-xl font-semibold tabular-nums sm:text-2xl">{cell.value}</p>
+                <p className="font-display text-lg font-semibold tabular-nums sm:text-2xl">{cell.value}</p>
                 <p className="mt-1.5 text-[10px] uppercase tracking-wide text-[var(--muted)]">{cell.label}</p>
               </div>
             ))}
@@ -633,8 +633,8 @@ function MiniStat({
 }) {
   return (
     <div className="mini-stat">
-      <p className="text-[11px] text-[var(--muted)]">{label}</p>
-      <p className="mt-1 font-display text-lg font-semibold tabular-nums">{value}</p>
+      <p className="truncate text-[10px] text-[var(--muted)] sm:text-[11px]">{label}</p>
+      <p className="mt-1 font-display text-base font-semibold tabular-nums sm:text-lg">{value}</p>
       {hint ? <p className="mt-0.5 text-[10px] text-[var(--muted)]">{hint}</p> : null}
     </div>
   );

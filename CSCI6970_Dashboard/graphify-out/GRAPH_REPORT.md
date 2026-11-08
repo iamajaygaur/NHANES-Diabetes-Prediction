@@ -1,18 +1,18 @@
-# Graph Report - CSCI6970_Dashboard  (2026-11-07)
+# Graph Report - CSCI6970_Dashboard  (2026-11-08)
 
 ## Corpus Check
-- 69 files · ~28,745 words
+- 69 files · ~28,796 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 137 file(s) not represented in the graph (top: .csv 120, (none) 7, .pkl 3)
 - WARNING: 137 of 233 files seen (59%) have no supported extractor and are missing from this graph entirely. It may look complete while representing only part of the codebase.
 
 ## Summary
-- 499 nodes · 876 edges · 37 communities (25 shown, 12 thin omitted)
+- 500 nodes · 877 edges · 36 communities (23 shown, 13 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 6 edges (avg confidence: 0.9)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `5f3bf51c`
+- Built from commit: `b4eff846`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -36,8 +36,7 @@
 - DiabetesInsight
 - eslint.config.mjs
 - Model Integration Guide — DiabetesInsight
-- ShapImpactChart.tsx
-- card.tsx
+- tailwind-merge
 - scripts
 - DiabetesInsight Backend
 - DiabetesInsight API (Hugging Face Space)
@@ -62,29 +61,29 @@
 10. `get_settings()` - 13 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `CardDescription()` --calls--> `cn()`  [EXTRACTED]
-  frontend/src/components/ui/card.tsx → frontend/src/lib/utils.ts
-- `CardHeader()` --calls--> `cn()`  [EXTRACTED]
-  frontend/src/components/ui/card.tsx → frontend/src/lib/utils.ts
-- `CardTitle()` --calls--> `cn()`  [EXTRACTED]
-  frontend/src/components/ui/card.tsx → frontend/src/lib/utils.ts
-- `OverviewPage()` --calls--> `ErrorState()`  [EXTRACTED]
-  frontend/src/app/page.tsx → frontend/src/components/States.tsx
-- `OverviewPage()` --calls--> `LoadingState()`  [EXTRACTED]
-  frontend/src/app/page.tsx → frontend/src/components/States.tsx
+- `PageHero()` --calls--> `cn()`  [EXTRACTED]
+  frontend/src/components/PageHero.tsx → frontend/src/lib/utils.ts
+- `HeroLink()` --calls--> `cn()`  [EXTRACTED]
+  frontend/src/components/PageHero.tsx → frontend/src/lib/utils.ts
+- `AnalysisPage()` --calls--> `ErrorState()`  [EXTRACTED]
+  frontend/src/app/analysis/page.tsx → frontend/src/components/States.tsx
+- `AnalysisPage()` --calls--> `LoadingState()`  [EXTRACTED]
+  frontend/src/app/analysis/page.tsx → frontend/src/components/States.tsx
+- `AnalysisPage()` --calls--> `cn()`  [EXTRACTED]
+  frontend/src/app/analysis/page.tsx → frontend/src/lib/utils.ts
 
 ## Import Cycles
 - None detected.
 
-## Communities (37 total, 12 thin omitted)
+## Communities (36 total, 13 thin omitted)
 
 ### Community 0 - "test_model_and_api.py"
 Cohesion: 0.07
 Nodes (18): get_settings(), Settings, configure_logging(), create_app(), lifespan(), _jsonable(), client(), test_confusion_matrix() (+10 more)
 
 ### Community 1 - "AppShell.tsx"
-Cohesion: 0.08
-Nodes (22): nextConfig, LINKS, body, display, metadata, RootLayout(), AppShell(), HeaderDensity (+14 more)
+Cohesion: 0.07
+Nodes (27): nextConfig, LINKS, body, display, metadata, RootLayout(), viewport, AppShell() (+19 more)
 
 ### Community 2 - "NHANES-Based Diabetes Prediction Using Machine Learning"
 Cohesion: 0.05
@@ -99,44 +98,44 @@ Cohesion: 0.12
 Nodes (21): analysis_distributions(), confusion_matrix(), dataset_features(), dataset_summary(), explainability_importance(), final_metrics(), get_figure(), health() (+13 more)
 
 ### Community 5 - "project/page.tsx"
-Cohesion: 0.11
-Nodes (21): Comparison, DONUT, MetricView, MiniStat(), Overview, OverviewPage(), ThresholdCurve, WORKFLOW (+13 more)
+Cohesion: 0.13
+Nodes (20): recharts@^3.10.1, Confusion, Explainability, Mini(), MODELS, NHANES_FILES, OBJECTIVES, Overview (+12 more)
 
 ### Community 6 - "DataService"
 Cohesion: 0.22
 Nodes (5): DataService, _df_records(), _feature_mix_shares(), _sanitize_json(), _strip_transformed_feature_name()
 
 ### Community 7 - "cn"
-Cohesion: 0.17
-Nodes (14): PackCard(), PackCardProps, PackRow(), PackRowProps, HeroLink(), PageHero(), FractionRing(), ProgressRing() (+6 more)
+Cohesion: 0.23
+Nodes (12): KpiCard(), Badge(), Card(), CardContent(), CardDescription(), CardHeader(), CardTitle(), MetricItem (+4 more)
 
 ### Community 8 - "frontend/package.json"
 Cohesion: 0.15
 Nodes (18): devDependencies, eslint@^9, eslint-config-next@15.1.0, postcss@^8, @types/node@^20, @types/react@^19, @types/react-dom@^19, typescript@^5 (+10 more)
 
 ### Community 9 - "performance/page.tsx"
-Cohesion: 0.18
-Nodes (16): Comparison, Confusion, FinalMetrics, MatrixCell(), MetricMini(), METRICS, MODEL_COLORS, PastelStat() (+8 more)
+Cohesion: 0.17
+Nodes (15): Comparison, Confusion, FinalMetrics, MatrixCell(), MetricMini(), METRICS, MODEL_COLORS, PastelStat() (+7 more)
 
 ### Community 10 - "compilerOptions"
 Cohesion: 0.11
 Nodes (18): compilerOptions, allowJs, esModuleInterop, incremental, isolatedModules, jsx, lib, module (+10 more)
 
 ### Community 11 - "dependencies"
-Cohesion: 0.11
-Nodes (18): dependencies, class-variance-authority@^0.7.1, clsx@^2.1.1, @hookform/resolvers@^7.0.3, lucide-react@^1.70.0, next@^16.4.5, react@^19.0.0, react-dom@^19.0.0 (+10 more)
+Cohesion: 0.12
+Nodes (16): dependencies, class-variance-authority@^0.7.1, clsx@^2.1.1, @hookform/resolvers@^7.0.3, lucide-react@^1.70.0, next@^16.4.5, react@^19.0.0, react-dom@^19.0.0 (+8 more)
 
 ### Community 13 - "analysis/page.tsx"
-Cohesion: 0.18
-Nodes (14): Analysis, AnalysisPage(), METRIC_META, Missingness, PastelStat(), shortFeat(), Tab, Target (+6 more)
+Cohesion: 0.22
+Nodes (11): Analysis, AnalysisPage(), METRIC_META, Missingness, PastelStat(), shortFeat(), Tab, Target (+3 more)
 
 ### Community 14 - "predict/page.tsx"
-Cohesion: 0.18
-Nodes (11): PredictPage(), onSubmit(), PredictResponse, Schema, ShapContribution, UNITS, COMMON_VALUE_LABELS, featureLabel() (+3 more)
+Cohesion: 0.13
+Nodes (18): PredictPage(), onSubmit(), PredictResponse, Schema, ShapContribution, UNITS, Disclaimer(), PackCard() (+10 more)
 
 ### Community 15 - "dataset/page.tsx"
-Cohesion: 0.23
-Nodes (9): DatasetPage(), Feature, Meta(), Summary, TYPE_PACKS, ErrorState(), LoadingState(), FEATURE_PACKS (+1 more)
+Cohesion: 0.14
+Nodes (18): DatasetPage(), Feature, Meta(), Summary, TYPE_PACKS, Comparison, DONUT, MetricView (+10 more)
 
 ### Community 16 - "DiabetesInsight"
 Cohesion: 0.15
@@ -149,14 +148,6 @@ Nodes (6): compat, __dirname, eslintConfig, __filename, @eslint/eslintrc@^3, @es
 ### Community 18 - "Model Integration Guide — DiabetesInsight"
 Cohesion: 0.25
 Nodes (7): Bundle contents, Critical encoding note, Inference steps, Model Integration Guide — DiabetesInsight, Preprocessing (from fitted pipeline), Security, Source artifacts (read-only)
-
-### Community 19 - "ShapImpactChart.tsx"
-Cohesion: 0.36
-Nodes (7): recharts@^3.10.1, ChartRow, cleanName(), ShapImpactChart(), ShapRow, shortLabel(), recharts
-
-### Community 20 - "card.tsx"
-Cohesion: 0.39
-Nodes (6): KpiCard(), Card(), CardContent(), CardDescription(), CardHeader(), CardTitle()
 
 ### Community 21 - "scripts"
 Cohesion: 0.25
@@ -179,20 +170,20 @@ Cohesion: 0.50
 Nodes (3): DiabetesInsight Enhancement Plan, Implemented in this pass, Later backlog
 
 ## Knowledge Gaps
-- **12 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **13 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `cn()` connect `cn` to `AppShell.tsx`, `project/page.tsx`, `performance/page.tsx`, `analysis/page.tsx`, `predict/page.tsx`, `dataset/page.tsx`, `ShapImpactChart.tsx`, `card.tsx`?**
-  _High betweenness centrality (0.041) - this node is a cross-community bridge._
+- **Why does `cn()` connect `cn` to `AppShell.tsx`, `project/page.tsx`, `performance/page.tsx`, `analysis/page.tsx`, `predict/page.tsx`, `dataset/page.tsx`?**
+  _High betweenness centrality (0.042) - this node is a cross-community bridge._
 - **Should `test_model_and_api.py` be split into smaller, more focused modules?**
   _Cohesion score 0.07372549019607844 - nodes in this community are weakly interconnected._
-- **Why does `react` connect `analysis/page.tsx` to `AppShell.tsx`, `project/page.tsx`, `cn`, `frontend/package.json`, `performance/page.tsx`, `dependencies`, `predict/page.tsx`, `dataset/page.tsx`, `ShapImpactChart.tsx`?**
+- **Why does `react` connect `project/page.tsx` to `AppShell.tsx`, `frontend/package.json`, `performance/page.tsx`, `dependencies`, `analysis/page.tsx`, `predict/page.tsx`, `dataset/page.tsx`?**
   _High betweenness centrality (0.031) - this node is a cross-community bridge._
 - **Should `AppShell.tsx` be split into smaller, more focused modules?**
-  _Cohesion score 0.07692307692307693 - nodes in this community are weakly interconnected._
-- **Why does `lucide-react` connect `analysis/page.tsx` to `AppShell.tsx`, `project/page.tsx`, `cn`, `frontend/package.json`, `performance/page.tsx`, `dependencies`, `predict/page.tsx`, `dataset/page.tsx`?**
+  _Cohesion score 0.06666666666666667 - nodes in this community are weakly interconnected._
+- **Why does `lucide-react` connect `AppShell.tsx` to `project/page.tsx`, `frontend/package.json`, `performance/page.tsx`, `dependencies`, `analysis/page.tsx`, `predict/page.tsx`, `dataset/page.tsx`?**
   _High betweenness centrality (0.028) - this node is a cross-community bridge._
 - **Should `NHANES-Based Diabetes Prediction Using Machine Learning` be split into smaller, more focused modules?**
   _Cohesion score 0.05263157894736842 - nodes in this community are weakly interconnected._

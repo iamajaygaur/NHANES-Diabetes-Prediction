@@ -196,7 +196,7 @@ export default function ProjectPage() {
     <div className="page-stack fade-in">
       <section className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
         <div className="min-w-0 max-w-3xl">
-          <h1 className="font-display text-[2.4rem] font-semibold tracking-tight sm:text-[2.75rem]">
+          <h1 className="break-words font-display text-[1.55rem] font-semibold tracking-tight sm:text-[2.15rem]">
             Detailed project
           </h1>
           <p className="mt-3 text-[1.1rem] leading-relaxed text-[var(--muted)]">
@@ -277,7 +277,7 @@ export default function ProjectPage() {
                   {project.dataset}
                 </span>
               </div>
-              <div className="mt-6 grid grid-cols-3 gap-3">
+              <div className="mt-6 grid grid-cols-1 gap-3 min-[420px]:grid-cols-3">
                 <Mini label="Diabetes" value={num(kpis.diabetes_cases)} />
                 <Mini label="Non-diabetes" value={num(kpis.non_diabetes_cases)} />
                 <Mini label="Predictors" value={String(kpis.predictor_features)} />

@@ -203,7 +203,7 @@ export default function PredictPage() {
     <div className="page-stack min-w-0 fade-in">
       <section className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
         <div className="min-w-0 max-w-3xl">
-          <h1 className="font-display text-[2.4rem] font-semibold tracking-tight sm:text-[2.75rem]">
+          <h1 className="break-words font-display text-[1.55rem] font-semibold tracking-tight sm:text-[2.15rem]">
             Prediction studio
           </h1>
           <p className="mt-3 text-[1.1rem] leading-relaxed text-[var(--muted)]">

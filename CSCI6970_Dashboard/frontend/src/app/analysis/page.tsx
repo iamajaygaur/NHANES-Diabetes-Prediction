@@ -195,7 +195,7 @@ export default function AnalysisPage() {
     <div className="page-stack fade-in">
       <section className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
         <div className="min-w-0 max-w-3xl">
-          <h1 className="font-display text-[2.4rem] font-semibold tracking-tight sm:text-[2.75rem]">
+          <h1 className="break-words font-display text-[1.55rem] font-semibold tracking-tight sm:text-[2.15rem]">
             Analysis
           </h1>
           <p className="mt-3 text-[1.1rem] leading-relaxed text-[var(--muted)]">
@@ -864,7 +864,7 @@ export default function AnalysisPage() {
               <h2 className="font-display text-lg font-semibold">Correlation table</h2>
               <p className="text-sm text-[var(--muted)]">{analysis.disclaimer}</p>
             </div>
-            <div className="overflow-auto">
+            <div className="table-scroll">
               <table className="min-w-full text-left text-sm">
                 <caption className="sr-only">Strong numerical feature correlations</caption>
                 <thead className="bg-[var(--panel-strong)] text-xs uppercase tracking-wide text-[var(--muted)]">

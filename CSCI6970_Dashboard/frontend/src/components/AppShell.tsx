@@ -237,7 +237,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
               {profileOpen ? (
                 <div
                   role="menu"
-                  className="absolute right-0 top-[calc(100%+0.5rem)] z-[70] w-[18rem] overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--panel)] p-2 shadow-xl"
+                  className="absolute right-0 top-[calc(100%+0.5rem)] z-[70] w-[min(18rem,calc(100vw-1.5rem))] max-w-[calc(100vw-1.5rem)] overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--panel)] p-2 shadow-xl"
                 >
                   <div className="flex items-center gap-3 rounded-xl bg-[var(--panel-strong)] px-2.5 py-2.5">
                     <span className="relative h-11 w-11 shrink-0 overflow-hidden rounded-xl">

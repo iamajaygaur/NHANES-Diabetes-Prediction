@@ -68,41 +68,43 @@ export function DemoTour() {
 
   return (
     <>
-      <button
-        type="button"
-        onClick={() => {
-          setOpen(true);
-          setStep(0);
-          router.push(STEPS[0].href);
-        }}
-        className="fixed bottom-5 left-5 z-40 inline-flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--panel)] px-4 py-2.5 text-sm font-medium text-[var(--foreground)] shadow-[var(--float-shadow)] backdrop-blur-xl"
-      >
-        <Play className="h-4 w-4 text-sky-500" />
-        Demo tour
-      </button>
+      {!open ? (
+        <button
+          type="button"
+          onClick={() => {
+            setOpen(true);
+            setStep(0);
+            router.push(STEPS[0].href);
+          }}
+          className="fixed bottom-[max(1rem,env(safe-area-inset-bottom))] left-[max(1rem,env(safe-area-inset-left))] z-40 inline-flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--panel)] px-3.5 py-2.5 text-sm font-medium text-[var(--foreground)] shadow-[var(--float-shadow)] backdrop-blur-xl"
+        >
+          <Play className="h-4 w-4 shrink-0 text-sky-500" />
+          <span>Demo tour</span>
+        </button>
+      ) : null}
 
       {open ? (
-        <div className="fixed bottom-5 right-5 z-50 w-[min(420px,calc(100vw-2rem))] rounded-3xl border border-[var(--border)] bg-[var(--panel)] p-5 shadow-[var(--float-shadow)] backdrop-blur-xl">
+        <div className="fixed bottom-[max(1rem,env(safe-area-inset-bottom))] left-1/2 z-50 w-[min(420px,calc(100vw-1.5rem))] -translate-x-1/2 rounded-3xl border border-[var(--border)] bg-[var(--panel)] p-4 shadow-[var(--float-shadow)] backdrop-blur-xl sm:left-auto sm:right-[max(1rem,env(safe-area-inset-right))] sm:translate-x-0 sm:p-5">
           <div className="mb-3 flex items-start justify-between gap-3">
-            <div>
+            <div className="min-w-0">
               <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">
                 Guided demo · {step + 1}/{STEPS.length}
               </p>
-              <h3 className="mt-1 font-display text-xl font-semibold text-[var(--foreground)]">
+              <h3 className="mt-1 font-display text-lg font-semibold text-[var(--foreground)] sm:text-xl">
                 {STEPS[step].title}
               </h3>
             </div>
             <button
               type="button"
               onClick={close}
-              className="rounded-xl border border-[var(--border)] p-2 text-[var(--muted)]"
+              className="shrink-0 rounded-xl border border-[var(--border)] p-2 text-[var(--muted)]"
               aria-label="Close demo tour"
             >
               <X className="h-4 w-4" />
             </button>
           </div>
           <p className="text-sm leading-relaxed text-[var(--muted)]">{STEPS[step].body}</p>
-          <div className="mt-4 flex items-center justify-between gap-3">
+          <div className="mt-4 flex flex-wrap items-center justify-between gap-3">
             <Link
               href={STEPS[step].href}
               className="text-sm font-medium text-sky-700 dark:text-sky-300"

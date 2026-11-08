@@ -23,10 +23,10 @@ export function PageHero({
       )}
     >
       <div className="min-w-0 max-w-4xl">
-        <h1 className="font-display text-[1.85rem] font-semibold tracking-tight text-[var(--foreground)] sm:text-[2.15rem]">
+        <h1 className="break-words font-display text-[1.55rem] font-semibold tracking-tight text-[var(--foreground)] sm:text-[2.15rem]">
           {title}
         </h1>
-        <p className="mt-2 text-[0.95rem] leading-relaxed text-[var(--muted)] sm:text-[1rem]">
+        <p className="mt-2 text-[0.9rem] leading-relaxed text-[var(--muted)] sm:text-[1rem]">
           {description}
         </p>
         {meta ? <div className="mt-2.5 flex flex-wrap items-center gap-2">{meta}</div> : null}

@@ -156,7 +156,7 @@ export default function PerformancePage() {
     <div className="page-stack fade-in">
       <section className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
         <div className="min-w-0 max-w-3xl">
-          <h1 className="font-display text-[2.4rem] font-semibold tracking-tight sm:text-[2.75rem]">
+          <h1 className="break-words font-display text-[1.55rem] font-semibold tracking-tight sm:text-[2.15rem]">
             Performance
           </h1>
           <p className="mt-3 text-[1.1rem] leading-relaxed text-[var(--muted)]">
@@ -374,7 +374,7 @@ export default function PerformancePage() {
               <h2 className="font-display text-lg font-semibold">Baseline table</h2>
               <p className="text-sm text-[var(--muted)]">Click a metric header to re-rank the chart</p>
             </div>
-            <div className="overflow-auto">
+            <div className="table-scroll">
               <table className="min-w-full text-left text-sm">
                 <caption className="sr-only">Baseline CV metrics by model</caption>
                 <thead className="bg-[var(--panel-strong)] text-xs uppercase tracking-wide text-[var(--muted)]">
@@ -564,7 +564,7 @@ export default function PerformancePage() {
               <h2 className="font-display text-lg font-semibold">Held-out 0.50 vs 0.60</h2>
               <p className="text-sm text-[var(--muted)]">Checked after threshold selection</p>
             </div>
-            <div className="overflow-auto">
+            <div className="table-scroll">
               <table className="min-w-full text-left text-sm">
                 <caption className="sr-only">Held-out test threshold comparison</caption>
                 <thead className="bg-[var(--panel-strong)] text-xs uppercase tracking-wide text-[var(--muted)]">

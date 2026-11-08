@@ -62,7 +62,7 @@ export function PackCard({
             <p className="truncate font-display text-lg font-semibold leading-tight">
               {title}
             </p>
-            <p className="mt-1 text-sm text-[var(--muted)]">{subtitle}</p>
+            <p className="mt-1 break-words text-sm text-[var(--muted)]">{subtitle}</p>
           </div>
         </div>
         <FractionRing done={done} total={total} color={ring} />
