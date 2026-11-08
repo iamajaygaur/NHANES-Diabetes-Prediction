@@ -33,15 +33,13 @@ const themeInitScript = `(() => {
   try {
     const key = 'diabetesinsight-theme';
     const stored = localStorage.getItem(key);
-    const theme = stored === 'light' || stored === 'dark'
-      ? stored
-      : (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+    const theme = stored === 'light' || stored === 'dark' ? stored : 'light';
     const root = document.documentElement;
     root.classList.remove('light', 'dark');
     root.classList.add(theme);
     root.style.colorScheme = theme;
   } catch (_) {
-    document.documentElement.classList.add('dark');
+    document.documentElement.classList.add('light');
   }
 })();`;
 
@@ -51,7 +49,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark" suppressHydrationWarning>
+    <html lang="en" className="light" suppressHydrationWarning>
       <body
         className={`${body.variable} ${display.variable} font-sans antialiased`}
         suppressHydrationWarning
