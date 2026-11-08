@@ -114,8 +114,8 @@ export function ShapImpactChart({ rows }: { rows: ShapRow[] }) {
                 const isActive = index === active;
                 return (
                   <text
-                    x={x}
-                    y={y + 14}
+                    x={Number(x)}
+                    y={Number(y) + 14}
                     textAnchor="middle"
                     fill={isActive ? "var(--foreground)" : "var(--chart-tick)"}
                     fontSize={11}

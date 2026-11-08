@@ -24,6 +24,7 @@ import {
 import { useEffect, useRef, useState } from "react";
 import { DemoTour } from "@/components/DemoTour";
 import { useTheme } from "@/components/theme-provider";
+import { warmApi } from "@/lib/api";
 import { NAV_ITEMS } from "@/lib/nav";
 import { CREATOR, SITE } from "@/lib/site";
 import { cn } from "@/lib/utils";
@@ -46,6 +47,11 @@ export function AppShell({ children }: { children: React.ReactNode }) {
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // Wake the free Render API as soon as the shell mounts (before page fetches).
+  useEffect(() => {
+    warmApi();
   }, []);
 
   useEffect(() => {

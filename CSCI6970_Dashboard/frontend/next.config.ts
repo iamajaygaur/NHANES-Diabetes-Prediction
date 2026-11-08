@@ -1,16 +1,11 @@
 import type { NextConfig } from "next";
 
-const BACKEND_URL = process.env.BACKEND_URL ?? "http://127.0.0.1:8000";
-
+/**
+ * API traffic goes through `src/app/api/[...path]/route.ts` so GET responses
+ * can be cached on Vercel (Render free cold starts no longer block every user).
+ */
 const nextConfig: NextConfig = {
-  async rewrites() {
-    return [
-      {
-        source: "/api/:path*",
-        destination: `${BACKEND_URL}/api/:path*`,
-      },
-    ];
-  },
+  // Keep empty rewrites — proxy lives in the App Router route handler.
 };
 
 export default nextConfig;

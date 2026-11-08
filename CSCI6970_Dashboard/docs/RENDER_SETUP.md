@@ -27,6 +27,15 @@ Render’s free Web Service is usable for demos and class projects, but it is no
 
 If a health check times out once after idle, wait and retry — that is normal on free Render, not necessarily a bad deploy.
 
+### Keeping it warm (so visitors wait less)
+
+This repo includes `.github/workflows/keepalive.yml`, which curls `/api/health` every ~12 minutes. After you push to GitHub, confirm the workflow is enabled under **Actions** (first run may need “Enable workflows”).
+
+The Vercel frontend also:
+
+- warms `/api/health` as soon as the shell loads
+- caches successful dashboard GETs for ~5 minutes (session + Vercel)
+
 ---
 
 ## Before you start

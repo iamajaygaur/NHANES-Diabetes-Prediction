@@ -5,7 +5,8 @@ Minimal production layout for DiabetesInsight.
 ## Pieces
 
 1. FastAPI serves `/api` and loads `backend/models/final_xgboost_model_bundle.pkl`.
-2. Next.js serves the UI and rewrites `/api/*` to the API host.
+2. Next.js proxies `/api/*` via `frontend/src/app/api/[...path]/route.ts` (GET responses cached ~5 minutes on Vercel).
+3. GitHub Action `.github/workflows/keepalive.yml` pings Render every ~12 minutes so the free API stays awake.
 
 Do not ship raw participant rows or SEQN.
 

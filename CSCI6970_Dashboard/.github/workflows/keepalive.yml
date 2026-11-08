@@ -1,0 +1,29 @@
+# Pings the free Render API every ~12 minutes so it does not sleep.
+# Users then hit a warm backend instead of a 30–90s cold start.
+name: Keep Render API awake
+
+on:
+  schedule:
+    - cron: "*/12 * * * *"
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wake diabetesinsight-api
+        run: |
+          set -e
+          URL="${API_HEALTH_URL:-https://diabetesinsight-api.onrender.com/api/health}"
+          echo "Pinging $URL"
+          for i in 1 2 3; do
+            if curl -fsS --max-time 90 "$URL"; then
+              echo
+              echo "OK (attempt $i)"
+              exit 0
+            fi
+            echo "Attempt $i failed; retrying…"
+            sleep 5
+          done
+          echo "Keepalive ping failed (Render may still wake on next user visit)"
+          exit 0

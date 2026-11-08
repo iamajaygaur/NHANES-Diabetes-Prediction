@@ -612,8 +612,8 @@ export default function AnalysisPage() {
                         const on = index === activeMissing;
                         return (
                           <text
-                            x={x}
-                            y={y + 14}
+                            x={Number(x)}
+                            y={Number(y) + 14}
                             textAnchor="middle"
                             fill={on ? "var(--foreground)" : "var(--chart-tick)"}
                             fontSize={11}
@@ -755,8 +755,8 @@ export default function AnalysisPage() {
                       const on = index === activeCorr;
                       return (
                         <text
-                          x={x}
-                          y={y + 14}
+                          x={Number(x)}
+                          y={Number(y) + 14}
                           textAnchor="middle"
                           fill={on ? "var(--foreground)" : "var(--chart-tick)"}
                           fontSize={11}
