@@ -138,9 +138,18 @@ export function AppShell({ children }: { children: React.ReactNode }) {
 
             <button
               type="button"
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
               className="header-pill ml-auto rounded-2xl p-2.5 text-[var(--muted)] lg:hidden"
+              aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+            >
+              {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+            </button>
+            <button
+              type="button"
+              className="header-pill rounded-2xl p-2.5 text-[var(--muted)] lg:hidden"
               onClick={() => setOpen((v) => !v)}
               aria-label="Toggle navigation"
+              aria-expanded={open}
             >
               {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </button>
@@ -389,7 +398,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
         </div>
 
         {open ? (
-          <div className="float-header-mobile-shell mt-2 px-3 py-3 lg:hidden">
+          <div className="float-header-mobile-shell relative z-[60] mt-2 bg-[var(--panel)] px-3 py-3 lg:hidden">
             <div className="mb-3 flex items-center gap-3 rounded-2xl border border-[var(--border)] bg-[var(--panel-strong)] p-2">
               <span className="relative h-11 w-11 overflow-hidden rounded-xl">
                 <Image
@@ -417,6 +426,42 @@ export function AppShell({ children }: { children: React.ReactNode }) {
                 Meet
               </Link>
             </div>
+
+            <p className="px-1 pb-1.5 text-[10px] font-semibold uppercase tracking-wide text-[var(--muted)]">
+              Appearance
+            </p>
+            <div className="mb-3 grid grid-cols-2 gap-2">
+              <button
+                type="button"
+                onClick={() => setTheme("light")}
+                className={cn(
+                  "inline-flex items-center justify-center gap-2 rounded-xl border px-3 py-2.5 text-sm font-medium",
+                  theme === "light"
+                    ? "border-blue-500 bg-blue-600 text-white"
+                    : "border-[var(--border)] text-[var(--muted)]",
+                )}
+              >
+                <Sun className="h-4 w-4" />
+                Light
+              </button>
+              <button
+                type="button"
+                onClick={() => setTheme("dark")}
+                className={cn(
+                  "inline-flex items-center justify-center gap-2 rounded-xl border px-3 py-2.5 text-sm font-medium",
+                  theme === "dark"
+                    ? "border-blue-500 bg-blue-600 text-white"
+                    : "border-[var(--border)] text-[var(--muted)]",
+                )}
+              >
+                <Moon className="h-4 w-4" />
+                Dark
+              </button>
+            </div>
+
+            <p className="px-1 pb-1.5 text-[10px] font-semibold uppercase tracking-wide text-[var(--muted)]">
+              Navigate
+            </p>
             <div className="flex flex-col gap-1">
               {NAV_ITEMS.map((item) => {
                 const active =
