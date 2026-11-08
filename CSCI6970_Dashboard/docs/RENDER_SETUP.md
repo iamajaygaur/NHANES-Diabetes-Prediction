@@ -29,7 +29,7 @@ If a health check times out once after idle, wait and retry — that is normal o
 
 ### Keeping it warm (so visitors wait less)
 
-This repo includes `.github/workflows/keepalive.yml`, which curls `/api/health` every ~12 minutes. After you push to GitHub, confirm the workflow is enabled under **Actions** (first run may need “Enable workflows”).
+The GitHub repo includes `.github/workflows/keepalive.yml` (at the repository root), which curls `/api/health` every ~12 minutes. After you push, confirm the workflow is enabled under **Actions** (first run may need “Enable workflows”).
 
 The Vercel frontend also:
 
